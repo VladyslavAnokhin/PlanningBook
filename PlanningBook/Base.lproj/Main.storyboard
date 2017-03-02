@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="quW-Xe-ajY">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hdD-KV-pnG">
+            <objects>
+                <tabBarController id="quW-Xe-ajY" customClass="TabBarController" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="LEH-R0-lAQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0DD-wU-1lG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-972" y="-125"/>
+        </scene>
+        <!--Today Note View Controller-->
+        <scene sceneID="KTj-Id-wmX">
+            <objects>
+                <viewController storyboardIdentifier="TodayNoteViewController" id="eHB-JA-16M" customClass="TodayNoteViewController" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SGE-px-IL9"/>
+                        <viewControllerLayoutGuide type="bottom" id="5sN-5u-OV9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VBf-Lk-buY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fZ4-FW-MHs">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5sN-5u-OV9" firstAttribute="top" secondItem="fZ4-FW-MHs" secondAttribute="bottom" id="YpF-IL-8GU"/>
+                            <constraint firstItem="fZ4-FW-MHs" firstAttribute="leading" secondItem="VBf-Lk-buY" secondAttribute="leading" id="Zrb-6a-z8r"/>
+                            <constraint firstItem="fZ4-FW-MHs" firstAttribute="top" secondItem="SGE-px-IL9" secondAttribute="bottom" id="azE-78-Nhx"/>
+                            <constraint firstAttribute="trailing" secondItem="fZ4-FW-MHs" secondAttribute="trailing" id="exM-or-7sQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="fZ4-FW-MHs" id="E6i-kd-jSR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNQ-bx-OQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="-202"/>
+        </scene>
+        <!--History Notes View Cotnroller-->
+        <scene sceneID="YyS-Gh-Rop">
+            <objects>
+                <viewController storyboardIdentifier="HistoryNotesViewCotnroller" id="mk7-kv-g84" customClass="HistoryNotesViewCotnroller" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dcb-e3-0Mm"/>
+                        <viewControllerLayoutGuide type="bottom" id="LEP-et-tZB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CWY-lr-kfb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J8z-wC-QzD">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J8z-wC-QzD" firstAttribute="top" secondItem="dcb-e3-0Mm" secondAttribute="bottom" id="LDF-tM-Osq"/>
+                            <constraint firstItem="J8z-wC-QzD" firstAttribute="leading" secondItem="CWY-lr-kfb" secondAttribute="leading" id="d9S-Hq-MG1"/>
+                            <constraint firstItem="LEP-et-tZB" firstAttribute="top" secondItem="J8z-wC-QzD" secondAttribute="bottom" id="esf-kB-qsH"/>
+                            <constraint firstAttribute="trailing" secondItem="J8z-wC-QzD" secondAttribute="trailing" id="xpo-uk-Y2e"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="J8z-wC-QzD" id="K6t-Cj-PrQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Dw-Yt-xxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="110" y="484"/>
+        </scene>
+    </scenes>
+</document>
