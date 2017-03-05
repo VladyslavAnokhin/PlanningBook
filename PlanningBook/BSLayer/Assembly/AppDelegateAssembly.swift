@@ -16,8 +16,8 @@ class AppDelegateAssembly: TyphoonAssembly{
     
     public dynamic func appDelegate() -> Any {
         return TyphoonDefinition.withClass(AppDelegate.self,
-                                           configuration: { defenition in
-                                            defenition?.injectProperty(#selector(self.tabBarAssembly.tabBarController))
+                                           configuration: { definition in
+                                            definition?.injectProperty(#selector(self.tabBarAssembly.tabBarController))
         })
     }
     

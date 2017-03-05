@@ -28,7 +28,6 @@ class HistoryModuleAssembly: TyphoonAssembly{
                                                 factoryMethod?.injectParameter(with: "HistoryNotesViewCotnroller")
         })
     }
-    
 
 }
 
@@ -49,6 +48,44 @@ class TodayModuleAssembly: TyphoonAssembly{
                                              selector: #selector(UIStoryboard.instantiateViewController(withIdentifier:)),
                                              parameters: { (factoryMethod) in
                                                 factoryMethod?.injectParameter(with: "TodayNoteViewController")
+                                                
+        })
+    }
+}
+
+class DatePickerModuleAssembly: TyphoonAssembly {
+    var storyboardAssembly: StoryboardAssebmly!
+    
+    public dynamic func datePickerViewController() -> Any{
+        return TyphoonDefinition.withFactory(storyboardAssembly.mainStoryboard(),
+                                             selector: #selector(UIStoryboard.instantiateViewController(withIdentifier:)),
+                                             parameters: { (factoryMethod) in
+                                                factoryMethod?.injectParameter(with: "DatePickerViewController")
+                                                
+        })
+    }
+}
+
+class AddNoteModuleAssembly: TyphoonAssembly {
+    var storyboardAssembly: StoryboardAssebmly!
+    var datePickerAssembly: DatePickerModuleAssembly!
+    var saveInteractor: SaveNoteInteractorAssemlby!
+    
+    public dynamic func setupAddNoteViewController() -> Any {
+        return TyphoonDefinition.withClass(AddNoteViewController.self,
+                                           configuration: { (definition) in
+                                            definition?.injectProperty(#selector(getter: AddNoteViewController.datePicker),
+                                                                       with: self.datePickerAssembly.datePickerViewController())
+                                            definition?.injectProperty(#selector(getter: AddNoteViewController.saveInteractor),
+                                                                       with: self.saveInteractor.realmSaveNoteInteractor())
+        })
+    }
+    
+    public dynamic func addNoteViewController() -> Any{
+        return TyphoonDefinition.withFactory(storyboardAssembly.mainStoryboard(),
+                                             selector: #selector(UIStoryboard.instantiateViewController(withIdentifier:)),
+                                             parameters: { (factoryMethod) in
+                                                factoryMethod?.injectParameter(with: "AddNoteViewController")
                                                 
         })
     }

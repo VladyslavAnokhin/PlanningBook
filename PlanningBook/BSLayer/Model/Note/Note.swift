@@ -13,9 +13,15 @@ struct DataRange {
     let end: Date
 }
 
-struct Note {
+class Note: NSObject {
     var title: String
-    var description: String
+    var body: String
     
     var dataRange: DataRange
+    
+    init(title: String, body: String, dateRange: DataRange){
+        self.title = title
+        self.body = body
+        self.dataRange = dateRange
+    }
 }

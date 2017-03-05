@@ -2,17 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>TyphoonInitialAssemblies</key>
-	<array>
-		<string>EmptyTableViewDelegateAssembly</string>
-		<string>TodayModuleAssembly</string>
-		<string>HistoryModuleAssembly</string>
-		<string>StoryboardAssebmly</string>
-		<string>ControllersForTabBarAssembly</string>
-		<string>TabBarControllerAssembly</string>
-		<string>TabBarItemAssembly</string>
-		<string>AppDelegateAssembly</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -31,10 +20,22 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>TyphoonInitialAssemblies</key>
+	<array>
+		<string>SaveNoteInteractorAssemlby</string>
+		<string>DatePickerModuleAssembly</string>
+		<string>AddNoteModuleAssembly</string>
+		<string>EmptyTableViewDelegateAssembly</string>
+		<string>TodayModuleAssembly</string>
+		<string>HistoryModuleAssembly</string>
+		<string>StoryboardAssebmly</string>
+		<string>ControllersForTabBarAssembly</string>
+		<string>TabBarControllerAssembly</string>
+		<string>TabBarItemAssembly</string>
+		<string>AppDelegateAssembly</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

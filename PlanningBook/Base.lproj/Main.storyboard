@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -53,7 +54,93 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNQ-bx-OQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="-202"/>
+            <point key="canvasLocation" x="110" y="-420"/>
+        </scene>
+        <!--Add Note View Controller-->
+        <scene sceneID="ezr-Ge-3F4">
+            <objects>
+                <viewController storyboardIdentifier="AddNoteViewController" id="DZq-Wg-Gpu" customClass="AddNoteViewController" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xVP-qW-dQZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="HGK-NC-2hy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="85e-cP-lFN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eja-fd-FB0">
+                                <rect key="frame" x="16" y="28" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="2dp-Fs-Sts"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VhH-bs-RBM">
+                                <rect key="frame" x="16" y="50" width="343" height="239"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="239" id="7PG-PY-6lj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="mqc-r8-9CT">
+                                <rect key="frame" x="16" y="298" width="343" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsV-6G-Fu8">
+                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="44"/>
+                                        <state key="normal" title="Start Date"/>
+                                        <connections>
+                                            <action selector="startDateAction:" destination="DZq-Wg-Gpu" eventType="touchUpInside" id="XDs-Gz-AZS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zc-JA-0p3">
+                                        <rect key="frame" x="140.5" y="0.0" width="140.5" height="44"/>
+                                        <state key="normal" title="End Date"/>
+                                        <connections>
+                                            <action selector="endDayAction:" destination="DZq-Wg-Gpu" eventType="touchUpInside" id="YRL-GZ-w8T"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-Hk-TMO">
+                                        <rect key="frame" x="281" y="0.0" width="62" height="44"/>
+                                        <state key="normal" title="Save!"/>
+                                        <connections>
+                                            <action selector="saveAction:" destination="DZq-Wg-Gpu" eventType="touchUpInside" id="Y2K-Xo-87R"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gK0-5z-vFc"/>
+                                    <constraint firstItem="LsV-6G-Fu8" firstAttribute="width" secondItem="7Zc-JA-0p3" secondAttribute="width" id="pYE-T6-4uY"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VhH-bs-RBM" firstAttribute="top" secondItem="eja-fd-FB0" secondAttribute="bottom" constant="2" id="253-4f-6Xc"/>
+                            <constraint firstItem="eja-fd-FB0" firstAttribute="trailing" secondItem="85e-cP-lFN" secondAttribute="trailingMargin" id="CLN-7G-QIu"/>
+                            <constraint firstItem="mqc-r8-9CT" firstAttribute="top" secondItem="VhH-bs-RBM" secondAttribute="bottom" constant="-1" id="RVB-vP-F4b"/>
+                            <constraint firstItem="mqc-r8-9CT" firstAttribute="trailing" secondItem="85e-cP-lFN" secondAttribute="trailingMargin" id="RvD-Me-tYM"/>
+                            <constraint firstItem="eja-fd-FB0" firstAttribute="leading" secondItem="85e-cP-lFN" secondAttribute="leadingMargin" id="Y3c-yB-uaW"/>
+                            <constraint firstItem="VhH-bs-RBM" firstAttribute="trailing" secondItem="85e-cP-lFN" secondAttribute="trailingMargin" id="abb-j6-HPO"/>
+                            <constraint firstItem="VhH-bs-RBM" firstAttribute="leading" secondItem="85e-cP-lFN" secondAttribute="leadingMargin" id="dgf-AD-FML"/>
+                            <constraint firstItem="eja-fd-FB0" firstAttribute="top" secondItem="xVP-qW-dQZ" secondAttribute="bottom" constant="8" id="f8D-nH-yV1"/>
+                            <constraint firstItem="mqc-r8-9CT" firstAttribute="leading" secondItem="85e-cP-lFN" secondAttribute="leadingMargin" id="fZ8-AN-i7Q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="endDateButton" destination="7Zc-JA-0p3" id="cbC-PO-Wun"/>
+                        <outlet property="noteBodyTextView" destination="VhH-bs-RBM" id="qp5-k8-bUt"/>
+                        <outlet property="noteTitleTextField" destination="eja-fd-FB0" id="Tbm-g2-U7V"/>
+                        <outlet property="saveButton" destination="Fh4-Hk-TMO" id="jLL-y2-N3j"/>
+                        <outlet property="startDateButton" destination="LsV-6G-Fu8" id="4Lp-m2-RUU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ERY-Of-baF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1200.8" y="-194.75262368815595"/>
         </scene>
         <!--History Notes View Cotnroller-->
         <scene sceneID="YyS-Gh-Rop">
@@ -87,6 +174,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Dw-Yt-xxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="110" y="484"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="4Ka-hP-4fJ">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerViewController" id="6Ax-XW-aeR" customClass="DatePickerViewController" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YpF-Ep-iDe"/>
+                        <viewControllerLayoutGuide type="bottom" id="YPn-Wv-9ep"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lLB-bI-kQj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LRM-jB-O9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201" y="513"/>
         </scene>
     </scenes>
 </document>

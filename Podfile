@@ -8,7 +8,7 @@ target 'PlanningBook' do
   # Pods for PlanningBook
 	
 
-    pod 'Typhoon'
+    pod 'Typhoon', '~>3.5.0'
     pod 'DZNEmptyDataSet'
     pod 'RealmSwift'
 

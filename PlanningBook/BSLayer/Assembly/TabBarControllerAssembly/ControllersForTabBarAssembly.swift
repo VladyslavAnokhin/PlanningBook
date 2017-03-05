@@ -14,13 +14,16 @@ class ControllersForTabBarAssembly: TyphoonAssembly {
     var tabBarAssembly: TabBarItemAssembly!
     var todayModule: TodayModuleAssembly!
     var historyModule: HistoryModuleAssembly!
+    var addNoteModule: AddNoteModuleAssembly!
     
     public dynamic func viewControllers() -> Any {
         return TyphoonDefinition.withClass(NSMutableArray.self, configuration: {definition in
             
-            let tabsArray = [ self.todayNotesNavigation(),
+            let tabsArray = [
+                              self.todayNotesNavigation(),
+                              self.addNoteNavigation(),
                               self.historyNavigation()
-            ]
+                            ]
             
             definition?.useInitializer(#selector(NSMutableArray.init(capacity:)),
                                        parameters: { (initializer) in
@@ -37,6 +40,11 @@ class ControllersForTabBarAssembly: TyphoonAssembly {
     public dynamic func todayNotesNavigation()-> Any {
         return navigation(withRoot: todayModule.todayNoteViewController(),
                           AndTabBarItem: tabBarAssembly.todayNoteTabBarItem())
+    }
+    
+    public dynamic func addNoteNavigation() -> Any {
+        return navigation(withRoot: addNoteModule.addNoteViewController(),
+                          AndTabBarItem: tabBarAssembly.addNoteTabBarItem())
     }
     
     public dynamic func historyNavigation()-> Any {

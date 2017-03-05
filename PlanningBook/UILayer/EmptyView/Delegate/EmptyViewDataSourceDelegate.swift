@@ -9,9 +9,13 @@
 import Foundation
 import DZNEmptyDataSet
 
+typealias VoidBlock = ()->()
+
 class EmptyViewDataSourceDelegate: NSObject, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     let title: String
     let buttonTitle: String
+    
+    var buttonActionHandler: VoidBlock?
     
     init(title: String, buttonTitle: String){
         self.title = title
@@ -27,6 +31,9 @@ class EmptyViewDataSourceDelegate: NSObject, DZNEmptyDataSetSource, DZNEmptyData
         let emptyView = EmptyView(frame: viewFrame)
         emptyView.title = title
         emptyView.actionButtonTitle = buttonTitle
+        emptyView.didButtonTappedBlock = { [weak self] in
+            self?.buttonActionHandler?()
+        }
         return emptyView
     }
     

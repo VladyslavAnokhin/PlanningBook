@@ -36,4 +36,16 @@ class TabBarItemAssembly: TyphoonAssembly{
         })
     }
     
+    public dynamic func addNoteTabBarItem() -> Any {
+        return TyphoonDefinition.withClass(UITabBarItem.self,
+                                           configuration: { (definition) in
+                                            definition?.useInitializer(#selector(UITabBarItem.init(title:image:selectedImage:)),
+                                                                       parameters: { (method) in
+                                                                        method?.injectParameter(with: "Add Note")
+                                                                        method?.injectParameter(with: nil)
+                                                                        method?.injectParameter(with: nil)
+                                            })
+        })
+    }
+    
 }

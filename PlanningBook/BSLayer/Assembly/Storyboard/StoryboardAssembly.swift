@@ -15,12 +15,12 @@ class StoryboardAssebmly: TyphoonAssembly{
     public dynamic func mainStoryboard() -> Any {
         return TyphoonDefinition.withClass(TyphoonStoryboard.self,
                                            configuration:{ definition in
-            definition?.useInitializer(#selector(TyphoonStoryboard.init(name:factory:bundle:)),
-                                       parameters: {initilizer in
-                                        initilizer?.injectParameter(with: "Main")
-                                        initilizer?.injectParameter(with: self)
-                                        initilizer?.injectParameter(with: Bundle.main)
-            })
+                                            definition?.useInitializer(#selector(TyphoonStoryboard.init(name:factory:bundle:)),
+                                                                       parameters: {initilizer in
+                                                                        initilizer?.injectParameter(with: "Main")
+                                                                        initilizer?.injectParameter(with: self)
+                                                                        initilizer?.injectParameter(with: Bundle.main)
+                                            })
         })
     }
     

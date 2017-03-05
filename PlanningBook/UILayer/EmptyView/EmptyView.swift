@@ -13,6 +13,8 @@ class EmptyView: XibLoadeblView{
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
     
+    var didButtonTappedBlock: VoidBlock?
+    
     var title: String!{
         didSet{
             titleLabel.text = title
@@ -30,6 +32,6 @@ class EmptyView: XibLoadeblView{
     }
     
     @IBAction func actionButtonDidPress(_ sender: UIButton) {
-        
+        didButtonTappedBlock?()
     }
 }

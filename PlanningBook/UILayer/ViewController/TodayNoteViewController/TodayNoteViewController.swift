@@ -10,17 +10,30 @@ import UIKit
 
 class TodayNoteViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!{
+        didSet{
+            tableView.emptyDataSetSource = emptyDelagateDataSource
+            tableView.emptyDataSetDelegate = emptyDelagateDataSource
+            
+            tableView.tableFooterView = UIView()
+        }
+    }
     
-    var emptyDelagateDataSource: EmptyViewDataSourceDelegate!
+    var emptyDelagateDataSource: EmptyViewDataSourceDelegate!{
+        didSet{
+            emptyDelagateDataSource.buttonActionHandler = {
+                self.createNewNoteAction()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+  
+    }
+    
+    func createNewNoteAction(){
         
-        tableView.emptyDataSetSource = emptyDelagateDataSource
-        tableView.emptyDataSetDelegate = emptyDelagateDataSource
-        
-        tableView.tableFooterView = UIView()
     }
     
 }

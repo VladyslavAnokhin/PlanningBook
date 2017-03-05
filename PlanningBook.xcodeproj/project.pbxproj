@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A038C7A1E6CA50B00559A1E /* RealmSaveNoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A038C781E6CA50B00559A1E /* RealmSaveNoteInteractor.swift */; };
+		9A038C7B1E6CA50B00559A1E /* SaveNoteInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A038C791E6CA50B00559A1E /* SaveNoteInteractorProtocol.swift */; };
+		9A19B12F1E6B6D91000229B9 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B12E1E6B6D91000229B9 /* DatePickerViewController.swift */; };
+		9A19B1331E6B6F4C000229B9 /* DateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B1301E6B6F4C000229B9 /* DateCollectionViewCell.swift */; };
+		9A19B1341E6B6F4C000229B9 /* DateTimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B1311E6B6F4C000229B9 /* DateTimePicker.swift */; };
+		9A19B1351E6B6F4C000229B9 /* StepCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B1321E6B6F4C000229B9 /* StepCollectionViewFlowLayout.swift */; };
+		9A19B1391E6C5848000229B9 /* DatePickerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B1381E6C5848000229B9 /* DatePickerViewProtocol.swift */; };
+		9A19B13F1E6C99AF000229B9 /* RealmNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B13E1E6C99AF000229B9 /* RealmNote.swift */; };
+		9A19B1421E6CA43A000229B9 /* SaveNoteInteractorAssemlby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A19B1411E6CA43A000229B9 /* SaveNoteInteractorAssemlby.swift */; };
 		9A3DC91F1E671B15005573BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC91E1E671B15005573BD /* AppDelegate.swift */; };
 		9A3DC9241E671B15005573BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DC9221E671B15005573BD /* Main.storyboard */; };
 		9A3DC9261E671B15005573BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DC9251E671B15005573BD /* Assets.xcassets */; };
@@ -29,6 +38,7 @@
 		9A3DC96F1E677C01005573BD /* StoryboardAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC96E1E677C01005573BD /* StoryboardAssembly.swift */; };
 		9A3DC9721E677DC9005573BD /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9711E677DC9005573BD /* ViewControllerAssembly.swift */; };
 		9A3DC9751E678B46005573BD /* XibLoadeblView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9741E678B46005573BD /* XibLoadeblView.swift */; };
+		9AA5C5C31E6B54530013C866 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */; };
 		B92B1B51A67642D4E5A59551 /* Pods_PlanningBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30333F03AAB39210A308DF46 /* Pods_PlanningBookTests.framework */; };
 		F199DCFFFA8CB602F5A25ADB /* Pods_PlanningBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F0FAAEA287D05A211334D8 /* Pods_PlanningBook.framework */; };
 /* End PBXBuildFile section */
@@ -47,6 +57,15 @@
 		1536CFFEE0F72875669FD01D /* Pods-PlanningBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanningBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlanningBook/Pods-PlanningBook.release.xcconfig"; sourceTree = "<group>"; };
 		30333F03AAB39210A308DF46 /* Pods_PlanningBookTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanningBookTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E36AD991DCFC27BDDF1E101 /* Pods-PlanningBookTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanningBookTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlanningBookTests/Pods-PlanningBookTests.release.xcconfig"; sourceTree = "<group>"; };
+		9A038C781E6CA50B00559A1E /* RealmSaveNoteInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmSaveNoteInteractor.swift; path = BSLayer/Interactor/SaveNoteInteractor/RealmSaveNoteInteractor.swift; sourceTree = "<group>"; };
+		9A038C791E6CA50B00559A1E /* SaveNoteInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveNoteInteractorProtocol.swift; path = BSLayer/Interactor/SaveNoteInteractor/SaveNoteInteractorProtocol.swift; sourceTree = "<group>"; };
+		9A19B12E1E6B6D91000229B9 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = UILayer/ViewController/DatePickerViewController/DatePickerViewController.swift; sourceTree = "<group>"; };
+		9A19B1301E6B6F4C000229B9 /* DateCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateCollectionViewCell.swift; path = UILayer/ViewController/DatePickerViewController/DateTimePickerView/DateCollectionViewCell.swift; sourceTree = "<group>"; };
+		9A19B1311E6B6F4C000229B9 /* DateTimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTimePicker.swift; path = UILayer/ViewController/DatePickerViewController/DateTimePickerView/DateTimePicker.swift; sourceTree = "<group>"; };
+		9A19B1321E6B6F4C000229B9 /* StepCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StepCollectionViewFlowLayout.swift; path = UILayer/ViewController/DatePickerViewController/DateTimePickerView/StepCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		9A19B1381E6C5848000229B9 /* DatePickerViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewProtocol.swift; path = UILayer/ViewController/DatePickerViewController/DatePickerViewProtocol/DatePickerViewProtocol.swift; sourceTree = "<group>"; };
+		9A19B13E1E6C99AF000229B9 /* RealmNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmNote.swift; path = BSLayer/Model/Note/RealmNote.swift; sourceTree = "<group>"; };
+		9A19B1411E6CA43A000229B9 /* SaveNoteInteractorAssemlby.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveNoteInteractorAssemlby.swift; path = BSLayer/Assembly/InteractorAssembly/RealmInteractor/SaveNoteInteractorAssemlby.swift; sourceTree = "<group>"; };
 		9A3DC91B1E671B15005573BD /* PlanningBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanningBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3DC91E1E671B15005573BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3DC9231E671B15005573BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +92,7 @@
 		9A3DC96E1E677C01005573BD /* StoryboardAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardAssembly.swift; path = BSLayer/Assembly/Storyboard/StoryboardAssembly.swift; sourceTree = "<group>"; };
 		9A3DC9711E677DC9005573BD /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/ViewControllerAssembly.swift; sourceTree = "<group>"; };
 		9A3DC9741E678B46005573BD /* XibLoadeblView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XibLoadeblView.swift; path = UILayer/XibLaodeblView/XibLoadeblView.swift; sourceTree = "<group>"; };
+		9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNoteViewController.swift; path = UILayer/ViewController/AddNoteViewController/AddNoteViewController.swift; sourceTree = "<group>"; };
 		D9F0FAAEA287D05A211334D8 /* Pods_PlanningBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanningBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BDE9773F85116A57D9435E /* Pods-PlanningBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanningBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanningBook/Pods-PlanningBook.debug.xcconfig"; sourceTree = "<group>"; };
 		F4D4521A648209758BE76BE8 /* Pods-PlanningBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanningBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanningBookTests/Pods-PlanningBookTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +136,67 @@
 				30333F03AAB39210A308DF46 /* Pods_PlanningBookTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9A19B12D1E6B6D72000229B9 /* DatePickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9A19B1371E6C5825000229B9 /* Protocol */,
+				9A19B12E1E6B6D91000229B9 /* DatePickerViewController.swift */,
+				9A19B1361E6B6F4F000229B9 /* DateTimePickerView */,
+			);
+			name = DatePickerViewController;
+			sourceTree = "<group>";
+		};
+		9A19B1361E6B6F4F000229B9 /* DateTimePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				9A19B1321E6B6F4C000229B9 /* StepCollectionViewFlowLayout.swift */,
+				9A19B1301E6B6F4C000229B9 /* DateCollectionViewCell.swift */,
+				9A19B1311E6B6F4C000229B9 /* DateTimePicker.swift */,
+			);
+			name = DateTimePickerView;
+			sourceTree = "<group>";
+		};
+		9A19B1371E6C5825000229B9 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9A19B1381E6C5848000229B9 /* DatePickerViewProtocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		9A19B13A1E6C9422000229B9 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9A19B13B1E6C9435000229B9 /* SaveNoteInteractor */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		9A19B13B1E6C9435000229B9 /* SaveNoteInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				9A038C781E6CA50B00559A1E /* RealmSaveNoteInteractor.swift */,
+				9A038C791E6CA50B00559A1E /* SaveNoteInteractorProtocol.swift */,
+			);
+			name = SaveNoteInteractor;
+			sourceTree = "<group>";
+		};
+		9A19B1401E6CA3E7000229B9 /* InteractorAssembly */ = {
+			isa = PBXGroup;
+			children = (
+				9A19B1431E6CA452000229B9 /* Realm */,
+			);
+			name = InteractorAssembly;
+			sourceTree = "<group>";
+		};
+		9A19B1431E6CA452000229B9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				9A19B1411E6CA43A000229B9 /* SaveNoteInteractorAssemlby.swift */,
+			);
+			name = Realm;
 			sourceTree = "<group>";
 		};
 		9A3DC9121E671B15005573BD = {
@@ -164,10 +245,10 @@
 		9A3DC9421E671D8C005573BD /* UILayer */ = {
 			isa = PBXGroup;
 			children = (
-				9A3DC9731E678B13005573BD /* XibLoadeblView */,
 				9A3DC9591E671E9F005573BD /* Protocol */,
-				9A3DC94F1E671DFB005573BD /* EmptyView */,
 				9A3DC94E1E671DF3005573BD /* ViewController */,
+				9A3DC9731E678B13005573BD /* XibLoadeblView */,
+				9A3DC94F1E671DFB005573BD /* EmptyView */,
 			);
 			name = UILayer;
 			sourceTree = "<group>";
@@ -175,6 +256,7 @@
 		9A3DC9431E671D95005573BD /* BSLayer */ = {
 			isa = PBXGroup;
 			children = (
+				9A19B13A1E6C9422000229B9 /* Interactor */,
 				9A3DC9651E671EF2005573BD /* Protocol */,
 				9A3DC9691E671F4B005573BD /* Model */,
 				9A3DC9661E671EF8005573BD /* Extension */,
@@ -186,6 +268,7 @@
 		9A3DC9441E671DAB005573BD /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
+				9A19B1401E6CA3E7000229B9 /* InteractorAssembly */,
 				9A3DC9701E677DAE005573BD /* ViewControllerAssembly */,
 				9A3DC9451E671DBA005573BD /* TabBarAssebmly */,
 				9A3DC96D1E677BD2005573BD /* Storyboard */,
@@ -207,6 +290,8 @@
 		9A3DC94E1E671DF3005573BD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9A19B12D1E6B6D72000229B9 /* DatePickerViewController */,
+				9AA5C5C11E6B542E0013C866 /* AddNoteViewController */,
 				9A3DC9521E671E58005573BD /* TodayNoteViewController */,
 				9A3DC9511E671E4B005573BD /* HistoryNotesViewCotnroller */,
 				9A3DC9501E671E3F005573BD /* TabBarController */,
@@ -292,6 +377,7 @@
 			isa = PBXGroup;
 			children = (
 				9A3DC96B1E671F64005573BD /* Note.swift */,
+				9A19B13E1E6C99AF000229B9 /* RealmNote.swift */,
 			);
 			name = Note;
 			sourceTree = "<group>";
@@ -318,6 +404,14 @@
 				9A3DC9741E678B46005573BD /* XibLoadeblView.swift */,
 			);
 			name = XibLoadeblView;
+			sourceTree = "<group>";
+		};
+		9AA5C5C11E6B542E0013C866 /* AddNoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */,
+			);
+			name = AddNoteViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -526,13 +620,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A3DC9641E671ED7005573BD /* EmptyViewDataSourceDelegate.swift in Sources */,
+				9A038C7B1E6CA50B00559A1E /* SaveNoteInteractorProtocol.swift in Sources */,
 				9A3DC94A1E671DDA005573BD /* TabBarControllerAssembly.swift in Sources */,
+				9AA5C5C31E6B54530013C866 /* AddNoteViewController.swift in Sources */,
+				9A19B1341E6B6F4C000229B9 /* DateTimePicker.swift in Sources */,
 				9A3DC9751E678B46005573BD /* XibLoadeblView.swift in Sources */,
+				9A19B1331E6B6F4C000229B9 /* DateCollectionViewCell.swift in Sources */,
 				9A3DC95D1E671EAB005573BD /* ReusableView.swift in Sources */,
+				9A19B12F1E6B6D91000229B9 /* DatePickerViewController.swift in Sources */,
+				9A038C7A1E6CA50B00559A1E /* RealmSaveNoteInteractor.swift in Sources */,
 				9A3DC9601E671EC2005573BD /* EmptyView.swift in Sources */,
+				9A19B1421E6CA43A000229B9 /* SaveNoteInteractorAssemlby.swift in Sources */,
 				9A3DC91F1E671B15005573BD /* AppDelegate.swift in Sources */,
+				9A19B1351E6B6F4C000229B9 /* StepCollectionViewFlowLayout.swift in Sources */,
 				9A3DC95C1E671EAB005573BD /* NibOwner.swift in Sources */,
 				9A3DC9721E677DC9005573BD /* ViewControllerAssembly.swift in Sources */,
+				9A19B1391E6C5848000229B9 /* DatePickerViewProtocol.swift in Sources */,
 				9A3DC96F1E677C01005573BD /* StoryboardAssembly.swift in Sources */,
 				9A3DC94B1E671DDA005573BD /* TabBarItemAssembly.swift in Sources */,
 				9A3DC9541E671E6E005573BD /* TabBarController.swift in Sources */,
@@ -540,6 +643,7 @@
 				9A3DC96C1E671F64005573BD /* Note.swift in Sources */,
 				9A3DC94D1E671DE7005573BD /* AppDelegateAssembly.swift in Sources */,
 				9A3DC9581E671E8D005573BD /* TodayNoteViewController.swift in Sources */,
+				9A19B13F1E6C99AF000229B9 /* RealmNote.swift in Sources */,
 				9A3DC9491E671DDA005573BD /* ControllersForTabBarAssembly.swift in Sources */,
 				9A3DC9681E671F43005573BD /* TableView+Register.swift in Sources */,
 			);
