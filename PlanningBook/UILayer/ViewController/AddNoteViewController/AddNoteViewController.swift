@@ -71,7 +71,7 @@ class AddNoteViewController: UIViewController {
             return nil
         }
         
-        let dateRange = DataRange(start: startDate, end: endDate)
+        let dateRange = DateRange(start: startDate, end: endDate)
         let note = Note(title: noteTitleTextField.text!,
                         body: noteBodyTextView.text!,
                         dateRange: dateRange)

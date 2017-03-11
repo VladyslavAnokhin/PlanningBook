@@ -10,10 +10,10 @@ import Foundation
 import RealmSwift
 
 class RealmNote: Object{
-    var title: String? = nil
-    var body: String? = nil
+    dynamic var title: String = ""
+    dynamic var body: String = ""
     
-    var startDate: Date? = nil
-    var endDate: Date? = nil
+    dynamic var startDate: Date? = nil
+    dynamic var endDate: Date? = nil
 
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DataRange {
+struct DateRange {
     let start: Date
     let end: Date
 }
@@ -17,11 +17,16 @@ class Note: NSObject {
     var title: String
     var body: String
     
-    var dataRange: DataRange
+    var dateRange: DateRange
     
-    init(title: String, body: String, dateRange: DataRange){
+    init(title: String, body: String, dateRange: DateRange){
         self.title = title
         self.body = body
-        self.dataRange = dateRange
+        self.dateRange = dateRange
+    }
+    
+    convenience init(realmNote: RealmNote){
+        let dateRange = DateRange(start: realmNote.startDate!, end: realmNote.endDate!)
+        self.init(title: realmNote.title, body: realmNote.body, dateRange: dateRange)
     }
 }

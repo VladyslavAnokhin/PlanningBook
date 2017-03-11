@@ -12,4 +12,11 @@ struct HistoryTableViewCellModel{
     var title: String?
     var startDate: String?
     var endDate: String?
+    
+    init(note: Note, dataFormatter: DateFormatter){
+        self.title = note.title
+        
+        self.startDate = dataFormatter.string(from: note.dateRange.start)
+        self.endDate = dataFormatter.string(from: note.dateRange.end)
+    }
 }

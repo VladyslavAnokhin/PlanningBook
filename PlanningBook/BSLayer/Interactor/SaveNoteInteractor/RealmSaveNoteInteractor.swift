@@ -20,8 +20,8 @@ extension RealmSaveNoteInteractor: SaveNoteInteractorProtocol {
         let realmNote = RealmNote()
         realmNote.title = note.title
         realmNote.body = note.body
-        realmNote.startDate = note.dataRange.start
-        realmNote.endDate = note.dataRange.end
+        realmNote.startDate = note.dateRange.start
+        realmNote.endDate = note.dateRange.end
         
         if realm == nil {
             realm = try! Realm()
