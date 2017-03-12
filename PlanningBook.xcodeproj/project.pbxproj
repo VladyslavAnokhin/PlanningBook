@@ -25,6 +25,8 @@
 		9A2D341B1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D341A1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift */; };
 		9A2D341D1E75908700419FC1 /* RealmResult+Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D341C1E75908700419FC1 /* RealmResult+Paging.swift */; };
 		9A2D341F1E759AFF00419FC1 /* RealmResult+PagingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D341E1E759AFF00419FC1 /* RealmResult+PagingTest.swift */; };
+		9A2D34221E75B2C900419FC1 /* RealmTodayNotesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D34211E75B2C900419FC1 /* RealmTodayNotesInteractor.swift */; };
+		9A2D34241E75B31800419FC1 /* TodayNotesInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D34231E75B31800419FC1 /* TodayNotesInteractorProtocol.swift */; };
 		9A3DC91F1E671B15005573BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC91E1E671B15005573BD /* AppDelegate.swift */; };
 		9A3DC9241E671B15005573BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DC9221E671B15005573BD /* Main.storyboard */; };
 		9A3DC9261E671B15005573BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DC9251E671B15005573BD /* Assets.xcassets */; };
@@ -84,6 +86,8 @@
 		9A2D341A1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRealmNoteServiceTest.swift; sourceTree = "<group>"; };
 		9A2D341C1E75908700419FC1 /* RealmResult+Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RealmResult+Paging.swift"; path = "BSLayer/Extension/RealmResult+Paging.swift"; sourceTree = "<group>"; };
 		9A2D341E1E759AFF00419FC1 /* RealmResult+PagingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RealmResult+PagingTest.swift"; sourceTree = "<group>"; };
+		9A2D34211E75B2C900419FC1 /* RealmTodayNotesInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmTodayNotesInteractor.swift; path = BSLayer/Interactor/TodayNotesInteractor/RealmTodayNotesInteractor.swift; sourceTree = "<group>"; };
+		9A2D34231E75B31800419FC1 /* TodayNotesInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodayNotesInteractorProtocol.swift; path = BSLayer/Interactor/TodayNotesInteractor/TodayNotesInteractorProtocol.swift; sourceTree = "<group>"; };
 		9A3DC91B1E671B15005573BD /* PlanningBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanningBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3DC91E1E671B15005573BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3DC9231E671B15005573BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 		9A19B13A1E6C9422000229B9 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				9A2D34201E75B2A600419FC1 /* TodayNotesInteractor */,
 				9A2D34111E74AA9800419FC1 /* HistoryNotesInteracot */,
 				9A19B13B1E6C9435000229B9 /* SaveNoteInteractor */,
 			);
@@ -267,6 +272,15 @@
 				9A2D34181E74BA9000419FC1 /* FetchRealmNoteService.swift */,
 			);
 			name = Realm;
+			sourceTree = "<group>";
+		};
+		9A2D34201E75B2A600419FC1 /* TodayNotesInteractor */ = {
+			isa = PBXGroup;
+			children = (
+				9A2D34231E75B31800419FC1 /* TodayNotesInteractorProtocol.swift */,
+				9A2D34211E75B2C900419FC1 /* RealmTodayNotesInteractor.swift */,
+			);
+			name = TodayNotesInteractor;
 			sourceTree = "<group>";
 		};
 		9A3DC9121E671B15005573BD = {
@@ -719,8 +733,10 @@
 				9A038C7A1E6CA50B00559A1E /* RealmSaveNoteInteractor.swift in Sources */,
 				9A3DC9601E671EC2005573BD /* EmptyView.swift in Sources */,
 				9A19B1421E6CA43A000229B9 /* SaveNoteInteractorAssemlby.swift in Sources */,
+				9A2D34241E75B31800419FC1 /* TodayNotesInteractorProtocol.swift in Sources */,
 				9A3DC91F1E671B15005573BD /* AppDelegate.swift in Sources */,
 				9A19B1351E6B6F4C000229B9 /* StepCollectionViewFlowLayout.swift in Sources */,
+				9A2D34221E75B2C900419FC1 /* RealmTodayNotesInteractor.swift in Sources */,
 				9A3DC95C1E671EAB005573BD /* NibOwner.swift in Sources */,
 				9A3DC9721E677DC9005573BD /* ViewControllerAssembly.swift in Sources */,
 				9A19B1391E6C5848000229B9 /* DatePickerViewProtocol.swift in Sources */,

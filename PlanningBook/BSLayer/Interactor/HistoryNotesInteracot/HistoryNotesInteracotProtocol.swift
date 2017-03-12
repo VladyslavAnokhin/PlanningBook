@@ -8,8 +8,9 @@
 
 import Foundation
 
-typealias HistoryNoteCompletion = ([Note]?, NSError?)->()
+typealias NoteArrayCompletion = ([Note]?, NSError?)->()
+
 @objc protocol HistoryNotesInteracotProtocol{
-    func fetchHistoryFeed(withCompletion completion: HistoryNoteCompletion )
-    func fetchNextOffset(withCompletion completion: HistoryNoteCompletion )
+    func fetchHistoryFeed(withCompletion completion: NoteArrayCompletion )
+    func fetchNextOffset(withCompletion completion: NoteArrayCompletion )
 }

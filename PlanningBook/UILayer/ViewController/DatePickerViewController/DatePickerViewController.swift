@@ -21,7 +21,10 @@ class DatePickerViewController: UIViewController {
         let datePickerView = DateTimePicker.show(selected: selectedDate, minimumDate: Date(), maximumDate: nil)
         datePickerView.completionHandler = { date in
             self.dismiss()
-            self.recivePickedDate?(date)
+            let timeZone = TimeZone.current
+            let seconds: TimeInterval = TimeInterval(timeZone.secondsFromGMT(for: date))
+            let newDate = Date(timeInterval: seconds, since: date)
+            self.recivePickedDate?(newDate)
         }
         view.addSubview(datePickerView)
     }

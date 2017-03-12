@@ -137,7 +137,7 @@ class FetchRealmNoteServiceTest: XCTestCase {
     
     func fetchTodayNotes(){
         let today = sut.fetchRealmNotes(withStartDateAfter: yesterdayEnd)
-                       .fetchRealmNotes(withEndDateBefore: tomorrowStart).result
+                       .fetchRealmNotes(withStartDateBefore: tomorrowStart).result
         
         XCTAssert(today?.count==1)
         XCTAssert(today?[0].title == "Today Note")

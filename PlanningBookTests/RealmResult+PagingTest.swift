@@ -76,4 +76,32 @@ class RealmResult_PagingTest: XCTestCase {
         XCTAssert(secondPart.last!.title == "99")
     }
     
+    func testPagingOnePartWithSameLimit(){
+        let firstPartPaging = Paging(limit: 100, offset: 0)
+        let secondPartPaging = firstPartPaging.next()
+        
+        let firstPart = sut.models(withPaging: firstPartPaging)
+        let secondPart = sut.models(withPaging: secondPartPaging)
+        
+        XCTAssert(firstPart.count == 100)
+        XCTAssert(secondPart.count == 0)
+        
+        XCTAssert(firstPart.first!.title == "0")
+        XCTAssert(firstPart.last!.title == "99")
+    }
+    
+    func testPaginationOnePartWithBiggerLimit(){
+        let firstPartPaging = Paging(limit: 120, offset: 0)
+        let secondPartPaging = firstPartPaging.next()
+        
+        let firstPart = sut.models(withPaging: firstPartPaging)
+        let secondPart = sut.models(withPaging: secondPartPaging)
+        
+        XCTAssert(firstPart.count == 100)
+        XCTAssert(secondPart.count == 0)
+        
+        XCTAssert(firstPart.first!.title == "0")
+        XCTAssert(firstPart.last!.title == "99")
+        
+    }
 }

@@ -20,13 +20,13 @@ class RealmHistoryNotesInteracot: NSObject {
     override init(){
         super.init()
         service = FetchRealmNoteService()
-        today = Date()
+        today = Date().startOfDay
         result = service.fetchRealmNotes(withEndDateBefore: today).result
     }
 }
 
 extension RealmHistoryNotesInteracot: HistoryNotesInteracotProtocol{
-    func fetchHistoryFeed(withCompletion completion: ([Note]?, NSError?)->() ){
+    func fetchHistoryFeed(withCompletion completion: NoteArrayCompletion ){
         paging = Paging(limit: 50, offset: 0)
         
         let realmNotes = result
@@ -36,10 +36,8 @@ extension RealmHistoryNotesInteracot: HistoryNotesInteracotProtocol{
         completion(realmNotes, nil)
     }
     
-    func fetchNextOffset(withCompletion completion: ([Note]?, NSError?)->() ){
-        let limit = paging.limit
-        let offset = paging.offset + paging.limit
-        paging = Paging(limit: limit, offset: offset)
+    func fetchNextOffset(withCompletion completion: NoteArrayCompletion ){
+        paging = paging.next()
         
         let realmNotes = result
             .models(withPaging: paging)

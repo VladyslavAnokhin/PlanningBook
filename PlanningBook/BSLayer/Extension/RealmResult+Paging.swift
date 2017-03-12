@@ -13,12 +13,16 @@ extension Results {
     func models(withPaging paging: Paging) -> [T]{
         
         var newNotes = [T]()
-        let offset = paging.offset
-        let butchSize = paging.offset + paging.limit
+        let startIndex = paging.offset
+        let packSize = paging.offset + paging.limit
         
-        let lastIndex = self.count < butchSize ? self.count : butchSize
+        let lastIndex = self.count < packSize ? self.count : packSize
         
-        for i in offset!..<lastIndex {
+        guard startIndex! < count else {
+            return newNotes
+        }
+        
+        for i in startIndex!..<lastIndex {
             let model = self[i]
             newNotes.append(model)
         }
