@@ -22,6 +22,7 @@
 		9A2D34131E74AAB700419FC1 /* HistoryNotesInteracotProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D34121E74AAB700419FC1 /* HistoryNotesInteracotProtocol.swift */; };
 		9A2D34151E74AB6200419FC1 /* RealmHistoryNotesInteracot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D34141E74AB6200419FC1 /* RealmHistoryNotesInteracot.swift */; };
 		9A2D34191E74BA9000419FC1 /* FetchRealmNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D34181E74BA9000419FC1 /* FetchRealmNoteService.swift */; };
+		9A2D341B1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D341A1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift */; };
 		9A3DC91F1E671B15005573BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC91E1E671B15005573BD /* AppDelegate.swift */; };
 		9A3DC9241E671B15005573BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DC9221E671B15005573BD /* Main.storyboard */; };
 		9A3DC9261E671B15005573BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DC9251E671B15005573BD /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		9A2D34121E74AAB700419FC1 /* HistoryNotesInteracotProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryNotesInteracotProtocol.swift; path = BSLayer/Interactor/HistoryNotesInteracot/HistoryNotesInteracotProtocol.swift; sourceTree = "<group>"; };
 		9A2D34141E74AB6200419FC1 /* RealmHistoryNotesInteracot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmHistoryNotesInteracot.swift; path = BSLayer/Interactor/HistoryNotesInteracot/RealmHistoryNotesInteracot.swift; sourceTree = "<group>"; };
 		9A2D34181E74BA9000419FC1 /* FetchRealmNoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRealmNoteService.swift; path = BSLayer/Service/Realm/FetchRealmNoteService.swift; sourceTree = "<group>"; };
+		9A2D341A1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRealmNoteServiceTest.swift; sourceTree = "<group>"; };
 		9A3DC91B1E671B15005573BD /* PlanningBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanningBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3DC91E1E671B15005573BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3DC9231E671B15005573BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				9A3DC9331E671B15005573BD /* PlanningBookTests.swift */,
 				9A3DC9351E671B15005573BD /* Info.plist */,
+				9A2D341A1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift */,
 			);
 			path = PlanningBookTests;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2D341B1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift in Sources */,
 				9A3DC9341E671B15005573BD /* PlanningBookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

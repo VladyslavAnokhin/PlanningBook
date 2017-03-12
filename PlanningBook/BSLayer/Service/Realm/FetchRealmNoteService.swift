@@ -49,7 +49,7 @@ class FetchRealmNoteService: NSObject {
     func fetchRealmNotes(withDateRange dateRange: DateRange,
                          shouldIncludeRange shouldInclude: Bool) -> Results<RealmNote>?{
         let equalOrSpace = shouldInclude ? "=" : ""
-        let predicateString = "startDate >"+equalOrSpace+" %@ END endDate <"+equalOrSpace+" %@"
+        let predicateString = "startDate >"+equalOrSpace+" %@ AND endDate <"+equalOrSpace+" %@"
         return fetchAllRealmNotes()?
             .filter(predicateString, dateRange.start, dateRange.end)
             .sorted(byKeyPath: "startDate", ascending: false)
