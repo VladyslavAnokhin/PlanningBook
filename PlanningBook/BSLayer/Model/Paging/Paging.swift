@@ -12,4 +12,8 @@ import Foundation
 struct Paging {
     var limit: Int!
     var offset: Int!
+    
+    func next() -> Paging {
+        return Paging(limit: limit, offset: limit + offset)
+    }
 }

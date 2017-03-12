@@ -11,52 +11,40 @@ import RealmSwift
 
 
 class RealmHistoryNotesInteracot: NSObject {
-    var realm: Realm?
-    var paging: Paging!
-    var today = Date()
+    var service: FetchRealmNoteService!
+    var today: Date!
     
-    internal func historyNotes() -> Results<RealmNote>?{
-        if realm == nil {
-            realm = try! Realm()
-        }
-        
-        return realm?.objects(RealmNote.self)
-            .filter("endDate < %@", today)
-            .sorted(byKeyPath: "startDate", ascending: false)
-    }
+    internal var paging: Paging!
+    internal var result: Results<RealmNote>!
     
-    internal func butchArray() -> [Note]{
-        if let notes = historyNotes(){
-            
-            var newNotes = [Note]()
-            let offset = paging.offset
-            let butchSize = paging.offset+paging.limit
-            
-            let lastIndex = notes.count < butchSize ? notes.count : butchSize
-            
-            for i in offset!..<lastIndex {
-                let realmNote = notes[i]
-                let newNote = Note(realmNote: realmNote)
-                newNotes.append(newNote)
-            }
-            
-            return newNotes
-        }
-        
-        return [Note]()
+    override init(){
+        super.init()
+        service = FetchRealmNoteService()
+        today = Date()
+        result = service.fetchRealmNotes(withEndDateBefore: today).result
     }
 }
 
 extension RealmHistoryNotesInteracot: HistoryNotesInteracotProtocol{
     func fetchHistoryFeed(withCompletion completion: ([Note]?, NSError?)->() ){
         paging = Paging(limit: 50, offset: 0)
-        let notes = butchArray()
-        completion(notes, nil)
+        
+        let realmNotes = result
+            .models(withPaging: paging)
+            .map{ Note(realmNote: $0) }
+        
+        completion(realmNotes, nil)
     }
     
     func fetchNextOffset(withCompletion completion: ([Note]?, NSError?)->() ){
-        paging.offset = paging.offset + paging.limit
-        let notes = butchArray()
-        completion(notes, nil)
+        let limit = paging.limit
+        let offset = paging.offset + paging.limit
+        paging = Paging(limit: limit, offset: offset)
+        
+        let realmNotes = result
+            .models(withPaging: paging)
+            .map{ Note(realmNote: $0) }
+        
+        completion(realmNotes, nil)
     }
 }

@@ -23,11 +23,12 @@
 		9A2D34151E74AB6200419FC1 /* RealmHistoryNotesInteracot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D34141E74AB6200419FC1 /* RealmHistoryNotesInteracot.swift */; };
 		9A2D34191E74BA9000419FC1 /* FetchRealmNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D34181E74BA9000419FC1 /* FetchRealmNoteService.swift */; };
 		9A2D341B1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D341A1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift */; };
+		9A2D341D1E75908700419FC1 /* RealmResult+Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D341C1E75908700419FC1 /* RealmResult+Paging.swift */; };
+		9A2D341F1E759AFF00419FC1 /* RealmResult+PagingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D341E1E759AFF00419FC1 /* RealmResult+PagingTest.swift */; };
 		9A3DC91F1E671B15005573BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC91E1E671B15005573BD /* AppDelegate.swift */; };
 		9A3DC9241E671B15005573BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DC9221E671B15005573BD /* Main.storyboard */; };
 		9A3DC9261E671B15005573BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DC9251E671B15005573BD /* Assets.xcassets */; };
 		9A3DC9291E671B15005573BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A3DC9271E671B15005573BD /* LaunchScreen.storyboard */; };
-		9A3DC9341E671B15005573BD /* PlanningBookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9331E671B15005573BD /* PlanningBookTests.swift */; };
 		9A3DC9491E671DDA005573BD /* ControllersForTabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9461E671DDA005573BD /* ControllersForTabBarAssembly.swift */; };
 		9A3DC94A1E671DDA005573BD /* TabBarControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9471E671DDA005573BD /* TabBarControllerAssembly.swift */; };
 		9A3DC94B1E671DDA005573BD /* TabBarItemAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9481E671DDA005573BD /* TabBarItemAssembly.swift */; };
@@ -81,6 +82,8 @@
 		9A2D34141E74AB6200419FC1 /* RealmHistoryNotesInteracot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmHistoryNotesInteracot.swift; path = BSLayer/Interactor/HistoryNotesInteracot/RealmHistoryNotesInteracot.swift; sourceTree = "<group>"; };
 		9A2D34181E74BA9000419FC1 /* FetchRealmNoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FetchRealmNoteService.swift; path = BSLayer/Service/Realm/FetchRealmNoteService.swift; sourceTree = "<group>"; };
 		9A2D341A1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchRealmNoteServiceTest.swift; sourceTree = "<group>"; };
+		9A2D341C1E75908700419FC1 /* RealmResult+Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RealmResult+Paging.swift"; path = "BSLayer/Extension/RealmResult+Paging.swift"; sourceTree = "<group>"; };
+		9A2D341E1E759AFF00419FC1 /* RealmResult+PagingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RealmResult+PagingTest.swift"; sourceTree = "<group>"; };
 		9A3DC91B1E671B15005573BD /* PlanningBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanningBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3DC91E1E671B15005573BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A3DC9231E671B15005573BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,7 +91,6 @@
 		9A3DC9281E671B15005573BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A3DC92A1E671B15005573BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A3DC92F1E671B15005573BD /* PlanningBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanningBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A3DC9331E671B15005573BD /* PlanningBookTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningBookTests.swift; sourceTree = "<group>"; };
 		9A3DC9351E671B15005573BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A3DC9461E671DDA005573BD /* ControllersForTabBarAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControllersForTabBarAssembly.swift; path = BSLayer/Assembly/TabBarControllerAssembly/ControllersForTabBarAssembly.swift; sourceTree = "<group>"; };
 		9A3DC9471E671DDA005573BD /* TabBarControllerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarControllerAssembly.swift; path = BSLayer/Assembly/TabBarControllerAssembly/TabBarControllerAssembly.swift; sourceTree = "<group>"; };
@@ -220,8 +222,8 @@
 		9A19B13B1E6C9435000229B9 /* SaveNoteInteractor */ = {
 			isa = PBXGroup;
 			children = (
-				9A038C781E6CA50B00559A1E /* RealmSaveNoteInteractor.swift */,
 				9A038C791E6CA50B00559A1E /* SaveNoteInteractorProtocol.swift */,
+				9A038C781E6CA50B00559A1E /* RealmSaveNoteInteractor.swift */,
 			);
 			name = SaveNoteInteractor;
 			sourceTree = "<group>";
@@ -304,9 +306,9 @@
 		9A3DC9321E671B15005573BD /* PlanningBookTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A3DC9331E671B15005573BD /* PlanningBookTests.swift */,
 				9A3DC9351E671B15005573BD /* Info.plist */,
 				9A2D341A1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift */,
+				9A2D341E1E759AFF00419FC1 /* RealmResult+PagingTest.swift */,
 			);
 			path = PlanningBookTests;
 			sourceTree = "<group>";
@@ -432,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				9A3DC9671E671F43005573BD /* TableView+Register.swift */,
+				9A2D341C1E75908700419FC1 /* RealmResult+Paging.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -704,6 +707,7 @@
 				9A038C841E6CD59D00559A1E /* HistoryTableViewCellModel.swift in Sources */,
 				9A3DC9641E671ED7005573BD /* EmptyViewDataSourceDelegate.swift in Sources */,
 				9A038C7B1E6CA50B00559A1E /* SaveNoteInteractorProtocol.swift in Sources */,
+				9A2D341D1E75908700419FC1 /* RealmResult+Paging.swift in Sources */,
 				9A038C801E6CD1BD00559A1E /* HistoryTableViewCell.swift in Sources */,
 				9A3DC94A1E671DDA005573BD /* TabBarControllerAssembly.swift in Sources */,
 				9AA5C5C31E6B54530013C866 /* AddNoteViewController.swift in Sources */,
@@ -741,7 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A2D341B1E74BC6B00419FC1 /* FetchRealmNoteServiceTest.swift in Sources */,
-				9A3DC9341E671B15005573BD /* PlanningBookTests.swift in Sources */,
+				9A2D341F1E759AFF00419FC1 /* RealmResult+PagingTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
