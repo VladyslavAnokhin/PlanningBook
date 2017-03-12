@@ -26,6 +26,7 @@ class FetchRealmNoteServiceTest: XCTestCase {
     
     var todayNote: RealmNote {
         let todayNote = RealmNote()
+        todayNote.title = "Today Note"
         todayNote.startDate = todayDateStart
         todayNote.endDate = todayDateEnd
         return todayNote
@@ -33,6 +34,7 @@ class FetchRealmNoteServiceTest: XCTestCase {
     
     var yesterdayNote: RealmNote {
         let yesterdayNote = RealmNote()
+        yesterdayNote.title = "Yesterday Note"
         yesterdayNote.startDate = yesterdayStart
         yesterdayNote.endDate = yesterdayEnd
         return yesterdayNote
@@ -40,6 +42,7 @@ class FetchRealmNoteServiceTest: XCTestCase {
     
     var tomorrowNote: RealmNote {
         let tomorrowNote = RealmNote()
+        tomorrowNote.title = "Tomorrow Note"
         tomorrowNote.startDate = tomorrowStart
         tomorrowNote.endDate = tomorrowEnd
         return tomorrowNote
@@ -107,34 +110,37 @@ class FetchRealmNoteServiceTest: XCTestCase {
     
     
     func testFetchAllNotesTest(){
-        let notes = sut.fetchAllRealmNotes()
+        let allNotes = sut.fetchAllRealmNotes().result
         
-        XCTAssert(notes?.count == 3, "we added 3 notes")
+        XCTAssert(allNotes?.count == 3)
     }
     
     func testFetchBeforeStartDate(){
-        let notes = sut.fetchRealmNotes(withStartDateBefore: todayDateStart)
+        let yesterdayNotes = sut.fetchRealmNotes(withStartDateBefore: todayDateStart).result
+        XCTAssert(yesterdayNotes?.count == 1)
+        XCTAssert(yesterdayNotes?[0].title == "Yesterday Note")
         
-        XCTAssertNotNil(notes)
-        XCTAssert(notes!.count == 1)
+        let todayAndYesterdayNotes = sut.fetchRealmNotes(withStartDateBefore: todayDateEnd).result
+        XCTAssert(todayAndYesterdayNotes?.count == 2)
+        XCTAssert(todayAndYesterdayNotes?[0].title == "Today Note")
+        XCTAssert(todayAndYesterdayNotes?[1].title == "Yesterday Note")
     }
     
-    func testFetchNotesWithRangeWithIncluding(){
-        let dateRangeAllNotes = DateRange(start: yesterdayStart, end: tomorrowEnd)
+    func testFetchAfterStartDate(){
+        let tomorrwoNote = sut.fetchRealmNotes(withStartDateAfter: todayDateStart).result
+        XCTAssert(tomorrwoNote?.count == 1)
+        XCTAssert(tomorrwoNote?[0].title == "Tomorrow Note")
         
-        let allNotes = sut.fetchRealmNotes(withDateRange: dateRangeAllNotes, shouldIncludeRange: true)
-        
-        XCTAssertNotNil(allNotes)
-        XCTAssert(allNotes!.count == 3)
+        let empty = sut.fetchRealmNotes(withStartDateAfter: tomorrowEnd).result
+        XCTAssert(empty?.count == 0)
     }
     
     func fetchTodayNotes(){
-        let todayRange = DateRange(start: yesterdayStart, end: tomorrowEnd)
+        let today = sut.fetchRealmNotes(withStartDateAfter: yesterdayEnd)
+                       .fetchRealmNotes(withEndDateBefore: tomorrowStart).result
         
-        let todayNote = sut.fetchRealmNotes(withDateRange: todayRange, shouldIncludeRange: false)
-        
-        XCTAssertNotNil(todayNote)
-        XCTAssert(todayNote!.count == 1)
+        XCTAssert(today?.count==1)
+        XCTAssert(today?[0].title == "Today Note")
     }
 }
 

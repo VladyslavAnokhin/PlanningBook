@@ -12,47 +12,66 @@ import RealmSwift
 class FetchRealmNoteService: NSObject {
     
     var realm: Realm!
+    var result: Results<RealmNote>!
     
     override init(){
         super.init()
         self.realm = try! Realm()
     }
     
-    func fetchAllRealmNotes() -> Results<RealmNote>?{
-        return realm.objects(RealmNote.self)
+    
+    func fetchAllRealmNotes() -> FetchRealmNoteService{
+        let newService = FetchRealmNoteService()
+        newService.result = realm.objects(RealmNote.self)
+        return newService
     }
     
-    func fetchRealmNotes(withStartDateBefore beforeDate: Date) -> Results<RealmNote>?{
-        return fetchAllRealmNotes()?
+    func fetchRealmNotes(withStartDateBefore beforeDate: Date) -> FetchRealmNoteService{
+        if result == nil {
+            result = fetchAllRealmNotes().result
+        }
+        
+        let newService = FetchRealmNoteService()
+        newService.result =  result
             .filter("startDate < %@", beforeDate)
             .sorted(byKeyPath: "startDate", ascending: false)
+        return newService
     }
     
-    func fetchRealmNotes(withStartDateAfter afterDate: Date) -> Results<RealmNote>?{
-        return fetchAllRealmNotes()?
+    func fetchRealmNotes(withStartDateAfter afterDate: Date) -> FetchRealmNoteService{
+        if result == nil {
+            result = fetchAllRealmNotes().result
+        }
+        
+        let newService = FetchRealmNoteService()
+        newService.result =  result
             .filter("startDate > %@", afterDate)
             .sorted(byKeyPath: "startDate", ascending: false)
+        return newService
     }
     
-    func fetchRealmNotes(withEndDateBefore beforeDate: Date) -> Results<RealmNote>?{
-        return fetchAllRealmNotes()?
+    func fetchRealmNotes(withEndDateBefore beforeDate: Date) -> FetchRealmNoteService{
+        if result == nil {
+            result = fetchAllRealmNotes().result
+        }
+        
+        let newService = FetchRealmNoteService()
+        newService.result =  result
             .filter("endDate < %@", beforeDate)
             .sorted(byKeyPath: "startDate", ascending: false)
+        return newService
     }
     
-    func fetchRealmNotes(withEndDateAfter afterDate: Date) -> Results<RealmNote>?{
-        return fetchAllRealmNotes()?
+    func fetchRealmNotes(withEndDateAfter afterDate: Date) -> FetchRealmNoteService{
+        if result == nil {
+            result = fetchAllRealmNotes().result
+        }
+        
+        let newService = FetchRealmNoteService()
+        newService.result =  result
             .filter("endDate > %@", afterDate)
             .sorted(byKeyPath: "startDate", ascending: false)
-    }
-    
-    func fetchRealmNotes(withDateRange dateRange: DateRange,
-                         shouldIncludeRange shouldInclude: Bool) -> Results<RealmNote>?{
-        let equalOrSpace = shouldInclude ? "=" : ""
-        let predicateString = "startDate >"+equalOrSpace+" %@ AND endDate <"+equalOrSpace+" %@"
-        return fetchAllRealmNotes()?
-            .filter(predicateString, dateRange.start, dateRange.end)
-            .sorted(byKeyPath: "startDate", ascending: false)
+        return newService
     }
     
 }
