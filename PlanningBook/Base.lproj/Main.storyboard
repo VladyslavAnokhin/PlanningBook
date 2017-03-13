@@ -1,27 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="quW-Xe-ajY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2fd-L9-eHm">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="hdD-KV-pnG">
+        <!--Navigation Controller-->
+        <scene sceneID="JFl-sc-ih0">
             <objects>
-                <tabBarController id="quW-Xe-ajY" customClass="TabBarController" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="LEH-R0-lAQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                <navigationController id="2fd-L9-eHm" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="tq3-VE-uN6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0DD-wU-1lG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bgd-hk-ALW" kind="relationship" relationship="rootViewController" id="nsz-wB-qUB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WqL-p2-gY3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-972" y="-125"/>
+            <point key="canvasLocation" x="-1632" y="-144"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MiG-80-YuP">
+            <objects>
+                <viewController id="bgd-hk-ALW" customClass="TabBarController" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HK4-aQ-paX"/>
+                        <viewControllerLayoutGuide type="bottom" id="uOF-dS-WwE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gqr-hh-NWN">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4U7-V9-rkR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pij-nk-w9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-922" y="-144"/>
         </scene>
         <!--Today Note View Controller-->
         <scene sceneID="KTj-Id-wmX">
@@ -54,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNQ-bx-OQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="-420"/>
+            <point key="canvasLocation" x="-73" y="-778"/>
         </scene>
         <!--Add Note View Controller-->
         <scene sceneID="ezr-Ge-3F4">
@@ -140,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERY-Of-baF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200.8" y="-194.75262368815595"/>
+            <point key="canvasLocation" x="-74" y="-123"/>
         </scene>
         <!--History Notes View Cotnroller-->
         <scene sceneID="YyS-Gh-Rop">
@@ -173,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Dw-Yt-xxH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="484"/>
+            <point key="canvasLocation" x="-74" y="547"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="4Ka-hP-4fJ">

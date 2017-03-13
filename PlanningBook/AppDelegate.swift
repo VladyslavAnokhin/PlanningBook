@@ -14,14 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     var window: UIWindow?
-    var tabBarController: TabBarController!
+    var appConfigurator: AppConfiguratorProtocol!
+    var tabBarController: UIViewController!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        window?.rootViewController = tabBarController
+        window?.rootViewController = appConfigurator.rootController()
         window?.makeKeyAndVisible()
         
         return true
@@ -29,3 +31,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+@objc protocol AppConfiguratorProtocol{
+    func rootController() -> UIViewController
+}
+
+class TabBarAppConfigurator: NSObject, AppConfiguratorProtocol{
+    
+    func rootController() -> UIViewController {
+        let 
+        let tabBar = TabBarController()
+        let navigation = UINavigationController(rootViewController: tabBar)
+        navigation.navigationBar.isTranslucent = false
+        let dataSource = ColorTabsDataSource()
+        dataSource.viewControllers = tabBar.viewControllers
+        tabBar.tabBarDataSource = dataSource
+        return navigation
+    }
+    
+}

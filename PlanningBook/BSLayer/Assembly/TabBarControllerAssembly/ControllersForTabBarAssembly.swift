@@ -60,8 +60,6 @@ class ControllersForTabBarAssembly: TyphoonAssembly {
                                                                         initalizer?.injectParameter(with: root)
                                             })
                                             
-                                            definition?.injectProperty(#selector(getter: UIViewController.tabBarItem),
-                                                                       with: item)
         })
     }
     

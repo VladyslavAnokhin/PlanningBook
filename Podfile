@@ -11,6 +11,7 @@ target 'PlanningBook' do
     pod 'Typhoon', '~>3.5.0'
     pod 'DZNEmptyDataSet'
     pod 'RealmSwift'
+    pod 'ColorMatchTabs', '~> 2.0'
 
   target 'PlanningBookTests' do
     inherit! :search_paths
