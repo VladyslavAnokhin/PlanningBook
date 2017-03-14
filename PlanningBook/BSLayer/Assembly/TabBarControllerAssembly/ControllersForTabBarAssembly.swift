@@ -12,6 +12,7 @@ import Typhoon
 class ControllersForTabBarAssembly: TyphoonAssembly {
     
     var tabBarAssembly: TabBarItemAssembly!
+    
     var todayModule: TodayModuleAssembly!
     var historyModule: HistoryModuleAssembly!
     var addNoteModule: AddNoteModuleAssembly!
@@ -20,9 +21,9 @@ class ControllersForTabBarAssembly: TyphoonAssembly {
         return TyphoonDefinition.withClass(NSMutableArray.self, configuration: {definition in
             
             let tabsArray = [
-                              self.todayNotesNavigation(),
-                              self.addNoteNavigation(),
-                              self.historyNavigation()
+                              self.todayModule.todayNoteViewController(),
+                              self.addNoteModule.addNoteViewController(),
+                              self.historyModule.historyViewController()
                             ]
             
             definition?.useInitializer(#selector(NSMutableArray.init(capacity:)),
@@ -34,32 +35,6 @@ class ControllersForTabBarAssembly: TyphoonAssembly {
                                      parameters: {typhoonMethod in
                                         typhoonMethod?.injectParameter(with: tabsArray)
             })
-        })
-    }
-    
-    public dynamic func todayNotesNavigation()-> Any {
-        return navigation(withRoot: todayModule.todayNoteViewController(),
-                          AndTabBarItem: tabBarAssembly.todayNoteTabBarItem())
-    }
-    
-    public dynamic func addNoteNavigation() -> Any {
-        return navigation(withRoot: addNoteModule.addNoteViewController(),
-                          AndTabBarItem: tabBarAssembly.addNoteTabBarItem())
-    }
-    
-    public dynamic func historyNavigation()-> Any {
-        return navigation(withRoot: historyModule.historyViewController(),
-                          AndTabBarItem: tabBarAssembly.historyTabBarItem())
-    }
-    
-    public dynamic func navigation(withRoot root: Any, AndTabBarItem item: Any) -> Any {
-        return TyphoonDefinition.withClass(UINavigationController.self,
-                                           configuration: { (definition) in
-                                            definition?.useInitializer(#selector(UINavigationController.init(rootViewController:)),
-                                                                       parameters: { (initalizer) in
-                                                                        initalizer?.injectParameter(with: root)
-                                            })
-                                            
         })
     }
     

@@ -22,6 +22,7 @@
 	<true/>
 	<key>TyphoonInitialAssemblies</key>
 	<array>
+		<string>TabBarAppConfiguratorAssembly</string>
 		<string>SaveNoteInteractorAssemlby</string>
 		<string>DatePickerModuleAssembly</string>
 		<string>AddNoteModuleAssembly</string>

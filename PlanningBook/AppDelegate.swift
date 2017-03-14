@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var appConfigurator: AppConfiguratorProtocol!
-    var tabBarController: UIViewController!
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -37,14 +36,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 class TabBarAppConfigurator: NSObject, AppConfiguratorProtocol{
     
+    var viewControllersForTabBar: [UIViewController]!
+    
     func rootController() -> UIViewController {
-        let 
-        let tabBar = TabBarController()
-        let navigation = UINavigationController(rootViewController: tabBar)
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigation = storyboard.instantiateInitialViewController() as! UINavigationController
         navigation.navigationBar.isTranslucent = false
+        let tabBar = navigation.viewControllers.first as! TabBarController
+        
         let dataSource = ColorTabsDataSource()
-        dataSource.viewControllers = tabBar.viewControllers
+        dataSource.viewControllers = viewControllersForTabBar
+        
         tabBar.tabBarDataSource = dataSource
+        
         return navigation
     }
     
