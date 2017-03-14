@@ -34,12 +34,10 @@ class HistoryModuleAssembly: TyphoonAssembly{
 class TodayModuleAssembly: TyphoonAssembly{
     
     var storyboardAssembly: StoryboardAssebmly!
-    var emptyTableViewAssembly: EmptyTableViewDelegateAssembly!
     
     public dynamic func setupTodayController() -> Any {
         return TyphoonDefinition.withClass(TodayNoteViewController.self, configuration: { (definition) in
-            definition?.injectProperty(#selector(getter: TodayNoteViewController.emptyDelagateDataSource),
-                                       with: self.emptyTableViewAssembly.todayPlansEmptyViewDelegate())
+            
         })
     }
     

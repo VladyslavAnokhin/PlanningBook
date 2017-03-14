@@ -8,7 +8,6 @@
 
 import Foundation
 
-@objc protocol TodayNotesInteractorProtocol{
-    func fetchTodayFeed(withCompletion completion: NoteArrayCompletion )
-    func fetchNextOffset(withCompletion completion: NoteArrayCompletion )
+@objc protocol DayNotesInteractorProtocol{
+    func fetchNotes(forDay date: Date, withCompletion completion: NoteArrayCompletion )
 }

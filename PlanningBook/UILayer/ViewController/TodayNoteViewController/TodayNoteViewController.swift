@@ -7,60 +7,37 @@
 //
 
 import UIKit
+import CalendarKit
+import DateToolsSwift
 
-class TodayNoteViewController: UIViewController {
-    
-    @IBOutlet weak var tableView: UITableView!{
-        didSet{
-            tableView.emptyDataSetSource = emptyDelagateDataSource
-            tableView.emptyDataSetDelegate = emptyDelagateDataSource
-            tableView.register(cell: HistoryTableViewCell.self)
-            tableView.dataSource = self
-            tableView.tableFooterView = UIView()
-        }
-    }
-    
-    var emptyDelagateDataSource: EmptyViewDataSourceDelegate!{
-        didSet{
-            emptyDelagateDataSource.buttonActionHandler = {
-                self.createNewNoteAction()
-            }
-        }
-    }
-    
-    var dataSource = [HistoryTableViewCellModel]()
-    var interactor: TodayNotesInteractorProtocol! = RealmTodayNotesInteractor()
+class TodayNoteViewController: DayViewController {
+
+    var interactor: DayNotesInteractorProtocol! = RealmTodayNotesInteractor()
+    var dataSource = [Note]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        interactor.fetchTodayFeed { (notes, error) in
-            if let notes = notes {
-                let dataForamtter = DateFormatter()
-                dataForamtter.dateFormat = "dd-MM-yyyy"
-                self.dataSource = notes.map{HistoryTableViewCellModel(note: $0, dataFormatter: dataForamtter)}
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func createNewNoteAction(){
         
     }
     
-}
+    override func eventViewsForDate(_ date: Date) -> [EventView] {
+        var views = [EventView]()
+        
+        for event in dataSource {
+            let view = EventView()
+            view.datePeriod = TimePeriod(beginning: event.dateRange.start,
+                                         end: event.dateRange.end)
+            // Add info: event title, subtitle, location to the array of Strings
+//            var info = [event.title, event.location]
+//            info.append("\(datePeriod.beginning!.format(with: "HH:mm")!) - \(datePeriod.end!.format(with: "HH:mm")!)")
+//            view.data = info
+            
+            views.append(view)
+        }
+        
+        return views
+    }
 
-extension TodayNoteViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.reuseIdentifier,
-                                                 for: indexPath) as! HistoryTableViewCell
-        cell.cellModel = dataSource[indexPath.row]
-        return cell
-    }
     
 }

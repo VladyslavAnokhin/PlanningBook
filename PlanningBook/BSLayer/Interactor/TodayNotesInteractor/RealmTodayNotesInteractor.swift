@@ -29,16 +29,8 @@ class RealmTodayNotesInteractor: NSObject {
     }
 }
 
-extension RealmTodayNotesInteractor: TodayNotesInteractorProtocol {
-    func fetchTodayFeed(withCompletion completion: NoteArrayCompletion ){
-        let notes = result
-            .models(withPaging: paging)
-            .map{Note(realmNote: $0)}
-        completion(notes, nil)
-    }
-    
-    func fetchNextOffset(withCompletion completion: NoteArrayCompletion ){
-        paging = paging.next()
+extension RealmTodayNotesInteractor: DayNotesInteractorProtocol {
+    func fetchNotes(forDay date: Date, withCompletion completion: NoteArrayCompletion ){
         let notes = result
             .models(withPaging: paging)
             .map{Note(realmNote: $0)}

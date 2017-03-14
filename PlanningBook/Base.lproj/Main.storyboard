@@ -13,7 +13,7 @@
         <scene sceneID="JFl-sc-ih0">
             <objects>
                 <navigationController id="2fd-L9-eHm" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="tq3-VE-uN6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="tq3-VE-uN6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -55,23 +55,8 @@
                     <view key="view" contentMode="scaleToFill" id="VBf-Lk-buY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fZ4-FW-MHs">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5sN-5u-OV9" firstAttribute="top" secondItem="fZ4-FW-MHs" secondAttribute="bottom" id="YpF-IL-8GU"/>
-                            <constraint firstItem="fZ4-FW-MHs" firstAttribute="leading" secondItem="VBf-Lk-buY" secondAttribute="leading" id="Zrb-6a-z8r"/>
-                            <constraint firstItem="fZ4-FW-MHs" firstAttribute="top" secondItem="SGE-px-IL9" secondAttribute="bottom" id="azE-78-Nhx"/>
-                            <constraint firstAttribute="trailing" secondItem="fZ4-FW-MHs" secondAttribute="trailing" id="exM-or-7sQ"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="fZ4-FW-MHs" id="E6i-kd-jSR"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNQ-bx-OQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
