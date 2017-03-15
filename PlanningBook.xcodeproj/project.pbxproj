@@ -50,6 +50,7 @@
 		9A3DC9751E678B46005573BD /* XibLoadeblView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9741E678B46005573BD /* XibLoadeblView.swift */; };
 		9A7A7E761E7374E900155FEE /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A7E751E7374E900155FEE /* Paging.swift */; };
 		9AA5C5C31E6B54530013C866 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */; };
+		B181BA8B1E79A55200BAEE5D /* RefreshableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181BA8A1E79A55200BAEE5D /* RefreshableView.swift */; };
 		B92B1B51A67642D4E5A59551 /* Pods_PlanningBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30333F03AAB39210A308DF46 /* Pods_PlanningBookTests.framework */; };
 		F199DCFFFA8CB602F5A25ADB /* Pods_PlanningBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F0FAAEA287D05A211334D8 /* Pods_PlanningBook.framework */; };
 /* End PBXBuildFile section */
@@ -115,6 +116,7 @@
 		9A3DC9741E678B46005573BD /* XibLoadeblView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XibLoadeblView.swift; path = UILayer/XibLaodeblView/XibLoadeblView.swift; sourceTree = "<group>"; };
 		9A7A7E751E7374E900155FEE /* Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Paging.swift; path = BSLayer/Model/Paging/Paging.swift; sourceTree = "<group>"; };
 		9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNoteViewController.swift; path = UILayer/ViewController/AddNoteViewController/AddNoteViewController.swift; sourceTree = "<group>"; };
+		B181BA8A1E79A55200BAEE5D /* RefreshableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshableView.swift; path = UILayer/Protocol/RefreshableView.swift; sourceTree = "<group>"; };
 		D9F0FAAEA287D05A211334D8 /* Pods_PlanningBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanningBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BDE9773F85116A57D9435E /* Pods-PlanningBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanningBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanningBook/Pods-PlanningBook.debug.xcconfig"; sourceTree = "<group>"; };
 		F4D4521A648209758BE76BE8 /* Pods-PlanningBookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanningBookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanningBookTests/Pods-PlanningBookTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 			children = (
 				9A3DC95A1E671EAB005573BD /* NibOwner.swift */,
 				9A3DC95B1E671EAB005573BD /* ReusableView.swift */,
+				B181BA8A1E79A55200BAEE5D /* RefreshableView.swift */,
 			);
 			name = Protocol;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				9A038C7A1E6CA50B00559A1E /* RealmSaveNoteInteractor.swift in Sources */,
 				9A3DC9601E671EC2005573BD /* EmptyView.swift in Sources */,
 				9A19B1421E6CA43A000229B9 /* SaveNoteInteractorAssemlby.swift in Sources */,
+				B181BA8B1E79A55200BAEE5D /* RefreshableView.swift in Sources */,
 				9A2D34241E75B31800419FC1 /* TodayNotesInteractorProtocol.swift in Sources */,
 				9A3DC91F1E671B15005573BD /* AppDelegate.swift in Sources */,
 				9A19B1351E6B6F4C000229B9 /* StepCollectionViewFlowLayout.swift in Sources */,

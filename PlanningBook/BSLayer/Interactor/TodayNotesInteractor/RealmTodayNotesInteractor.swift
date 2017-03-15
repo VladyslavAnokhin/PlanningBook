@@ -11,29 +11,24 @@ import RealmSwift
 
 class RealmTodayNotesInteractor: NSObject {
     var service: FetchRealmNoteService!
-    var todayStartDate: Date!
-    var todayEndDate: Date!
-    var paging: Paging!
-    
     internal var result: Results<RealmNote>!
     
     override init(){
         super.init()
-        let today = Date()
         service = FetchRealmNoteService()
-        todayStartDate = today.startOfDay
-        todayEndDate = today.endOfDay
-        paging = Paging(limit: 50, offset: 0)
-        result = service.fetchRealmNotes(withStartDateAfter: todayStartDate)
-                        .fetchRealmNotes(withStartDateBefore: todayEndDate).result
     }
 }
 
 extension RealmTodayNotesInteractor: DayNotesInteractorProtocol {
     func fetchNotes(forDay date: Date, withCompletion completion: NoteArrayCompletion ){
+        result = service.fetchRealmNotes(withStartDateAfter: date.startOfDay)
+                        .fetchRealmNotes(withStartDateBefore: date.endOfDay!).result
+        
+        let paging = Paging(limit: result.count, offset: 0)
         let notes = result
-            .models(withPaging: paging)
-            .map{Note(realmNote: $0)}
+                   .models(withPaging: paging)
+                   .map{Note(realmNote: $0)}
+        
         completion(notes, nil)
     }
 }

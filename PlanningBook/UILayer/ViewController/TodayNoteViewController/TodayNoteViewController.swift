@@ -10,34 +10,42 @@ import UIKit
 import CalendarKit
 import DateToolsSwift
 
-class TodayNoteViewController: DayViewController {
-
-    var interactor: DayNotesInteractorProtocol! = RealmTodayNotesInteractor()
-    var dataSource = [Note]()
+class TodayNoteViewController: DayViewController, Refreshable {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
+    var interactor: DayNotesInteractorProtocol! = RealmTodayNotesInteractor()
+    var cachedEvents = [Date: [Note]]()
     
     override func eventViewsForDate(_ date: Date) -> [EventView] {
+        
         var views = [EventView]()
         
-        for event in dataSource {
+        interactor.fetchNotes(forDay: date, withCompletion: { (notes, error) in
+            if let notes = notes {
+                views = self.eventsView(forDate: date, withNotes:  notes)
+            }
+        })
+        
+        return views
+    }
+    
+    private func eventsView(forDate date: Date, withNotes notes: [Note]) -> [EventView] {
+        var views = [EventView]()
+        
+        for event in  notes {
             let view = EventView()
-            view.datePeriod = TimePeriod(beginning: event.dateRange.start,
-                                         end: event.dateRange.end)
-            // Add info: event title, subtitle, location to the array of Strings
-//            var info = [event.title, event.location]
-//            info.append("\(datePeriod.beginning!.format(with: "HH:mm")!) - \(datePeriod.end!.format(with: "HH:mm")!)")
-//            view.data = info
+            let datePeriod = TimePeriod(beginning: event.dateRange.start, end: event.dateRange.end)
+            let dateString = "\(datePeriod.beginning!.format(with: "HH:mm")) - \(datePeriod.end!.format(with: "HH:mm"))"
+            view.datePeriod = datePeriod
+            view.data = [event.title, dateString]
             
             views.append(view)
         }
         
         return views
     }
-
     
+    func refreshUI() {
+        reloadData()
+    }
 }
+

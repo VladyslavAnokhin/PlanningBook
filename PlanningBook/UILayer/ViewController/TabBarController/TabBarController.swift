@@ -9,7 +9,7 @@
 import UIKit
 import ColorMatchTabs
 
-class TabBarController: ColorMatchTabsViewController {
+class TabBarController: ColorMatchTabsViewController, UITabBarControllerDelegate {
     
     var tabBarDataSource: ColorTabsDataSource!{
         didSet{
@@ -21,6 +21,15 @@ class TabBarController: ColorMatchTabsViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Planning Book"
+        scrollEnabled = false
+    }
+    
+    override func selectItem(at index: Int) {
+        super.selectItem(at: index)
+        
+        if let refreshable = dataSource?.tabsViewController(self, viewControllerAt: selectedSegmentIndex) as? Refreshable{
+            refreshable.refreshUI()
+        }
     }
 }
 
