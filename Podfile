@@ -8,11 +8,8 @@ target 'PlanningBook' do
   # Pods for PlanningBook
 	
 
-    pod 'Typhoon', '~>3.5.0'
     pod 'DZNEmptyDataSet'
     pod 'RealmSwift'
-    pod 'ColorMatchTabs', '~> 2.0'
-    pod 'CalendarKit'
 
   target 'PlanningBookTests' do
     inherit! :search_paths

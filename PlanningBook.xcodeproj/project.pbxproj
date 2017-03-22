@@ -34,7 +34,6 @@
 		9A3DC9491E671DDA005573BD /* ControllersForTabBarAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9461E671DDA005573BD /* ControllersForTabBarAssembly.swift */; };
 		9A3DC94A1E671DDA005573BD /* TabBarControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9471E671DDA005573BD /* TabBarControllerAssembly.swift */; };
 		9A3DC94B1E671DDA005573BD /* TabBarItemAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9481E671DDA005573BD /* TabBarItemAssembly.swift */; };
-		9A3DC94D1E671DE7005573BD /* AppDelegateAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC94C1E671DE7005573BD /* AppDelegateAssembly.swift */; };
 		9A3DC9541E671E6E005573BD /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9531E671E6E005573BD /* TabBarController.swift */; };
 		9A3DC9561E671E84005573BD /* HistoryNotesViewCotnroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9551E671E84005573BD /* HistoryNotesViewCotnroller.swift */; };
 		9A3DC9581E671E8D005573BD /* TodayNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9571E671E8D005573BD /* TodayNoteViewController.swift */; };
@@ -51,6 +50,7 @@
 		9A7A7E761E7374E900155FEE /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A7E751E7374E900155FEE /* Paging.swift */; };
 		9AA5C5C31E6B54530013C866 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */; };
 		B12AFAAF1E81882B007D432C /* SaveRealmNoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12AFAAE1E81882B007D432C /* SaveRealmNoteService.swift */; };
+		B14B04811E82E25000346522 /* SelectCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14B04801E82E25000346522 /* SelectCategoryViewController.swift */; };
 		B181BA8B1E79A55200BAEE5D /* RefreshableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181BA8A1E79A55200BAEE5D /* RefreshableView.swift */; };
 		B92B1B51A67642D4E5A59551 /* Pods_PlanningBookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30333F03AAB39210A308DF46 /* Pods_PlanningBookTests.framework */; };
 		F199DCFFFA8CB602F5A25ADB /* Pods_PlanningBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F0FAAEA287D05A211334D8 /* Pods_PlanningBook.framework */; };
@@ -101,7 +101,6 @@
 		9A3DC9461E671DDA005573BD /* ControllersForTabBarAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ControllersForTabBarAssembly.swift; path = BSLayer/Assembly/TabBarControllerAssembly/ControllersForTabBarAssembly.swift; sourceTree = "<group>"; };
 		9A3DC9471E671DDA005573BD /* TabBarControllerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarControllerAssembly.swift; path = BSLayer/Assembly/TabBarControllerAssembly/TabBarControllerAssembly.swift; sourceTree = "<group>"; };
 		9A3DC9481E671DDA005573BD /* TabBarItemAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarItemAssembly.swift; path = BSLayer/Assembly/TabBarControllerAssembly/TabBarItemAssembly.swift; sourceTree = "<group>"; };
-		9A3DC94C1E671DE7005573BD /* AppDelegateAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegateAssembly.swift; path = BSLayer/Assembly/AppDelegateAssembly.swift; sourceTree = "<group>"; };
 		9A3DC9531E671E6E005573BD /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarController.swift; path = UILayer/ViewController/TabBarController/TabBarController.swift; sourceTree = "<group>"; };
 		9A3DC9551E671E84005573BD /* HistoryNotesViewCotnroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryNotesViewCotnroller.swift; path = UILayer/ViewController/HistoryNotesViewCotnroller/HistoryNotesViewCotnroller.swift; sourceTree = "<group>"; };
 		9A3DC9571E671E8D005573BD /* TodayNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodayNoteViewController.swift; path = UILayer/ViewController/TodayNoteViewController/TodayNoteViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +117,7 @@
 		9A7A7E751E7374E900155FEE /* Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Paging.swift; path = BSLayer/Model/Paging/Paging.swift; sourceTree = "<group>"; };
 		9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNoteViewController.swift; path = UILayer/ViewController/AddNoteViewController/AddNoteViewController.swift; sourceTree = "<group>"; };
 		B12AFAAE1E81882B007D432C /* SaveRealmNoteService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SaveRealmNoteService.swift; path = BSLayer/Service/Realm/SaveRealmNoteService.swift; sourceTree = "<group>"; };
+		B14B04801E82E25000346522 /* SelectCategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectCategoryViewController.swift; path = UILayer/ViewController/SelectCategoryViewController/SelectCategoryViewController.swift; sourceTree = "<group>"; };
 		B181BA8A1E79A55200BAEE5D /* RefreshableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RefreshableView.swift; path = UILayer/Protocol/RefreshableView.swift; sourceTree = "<group>"; };
 		D9F0FAAEA287D05A211334D8 /* Pods_PlanningBook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanningBook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7BDE9773F85116A57D9435E /* Pods-PlanningBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanningBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlanningBook/Pods-PlanningBook.debug.xcconfig"; sourceTree = "<group>"; };
@@ -364,7 +364,6 @@
 				9A3DC9701E677DAE005573BD /* ViewControllerAssembly */,
 				9A3DC9451E671DBA005573BD /* TabBarAssebmly */,
 				9A3DC96D1E677BD2005573BD /* Storyboard */,
-				9A3DC94C1E671DE7005573BD /* AppDelegateAssembly.swift */,
 			);
 			name = Assembly;
 			sourceTree = "<group>";
@@ -382,6 +381,7 @@
 		9A3DC94E1E671DF3005573BD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B14B047F1E82E22600346522 /* SelectCategoryViewController */,
 				9A19B12D1E6B6D72000229B9 /* DatePickerViewController */,
 				9AA5C5C11E6B542E0013C866 /* AddNoteViewController */,
 				9A3DC9521E671E58005573BD /* TodayNoteViewController */,
@@ -515,6 +515,14 @@
 				9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */,
 			);
 			name = AddNoteViewController;
+			sourceTree = "<group>";
+		};
+		B14B047F1E82E22600346522 /* SelectCategoryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B14B04801E82E25000346522 /* SelectCategoryViewController.swift */,
+			);
+			name = SelectCategoryViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -726,6 +734,7 @@
 				9A2D34151E74AB6200419FC1 /* RealmHistoryNotesInteracot.swift in Sources */,
 				9A038C841E6CD59D00559A1E /* HistoryTableViewCellModel.swift in Sources */,
 				9A3DC9641E671ED7005573BD /* EmptyViewDataSourceDelegate.swift in Sources */,
+				B14B04811E82E25000346522 /* SelectCategoryViewController.swift in Sources */,
 				9A038C7B1E6CA50B00559A1E /* SaveNoteInteractorProtocol.swift in Sources */,
 				9A2D341D1E75908700419FC1 /* RealmResult+Paging.swift in Sources */,
 				9A038C801E6CD1BD00559A1E /* HistoryTableViewCell.swift in Sources */,
@@ -756,7 +765,6 @@
 				9A3DC9541E671E6E005573BD /* TabBarController.swift in Sources */,
 				9A3DC9561E671E84005573BD /* HistoryNotesViewCotnroller.swift in Sources */,
 				9A3DC96C1E671F64005573BD /* Note.swift in Sources */,
-				9A3DC94D1E671DE7005573BD /* AppDelegateAssembly.swift in Sources */,
 				9A3DC9581E671E8D005573BD /* TodayNoteViewController.swift in Sources */,
 				9A19B13F1E6C99AF000229B9 /* RealmNote.swift in Sources */,
 				9A3DC9491E671DDA005573BD /* ControllersForTabBarAssembly.swift in Sources */,

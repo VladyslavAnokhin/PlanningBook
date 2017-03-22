@@ -6,109 +6,85 @@
 //  Copyright © 2017 DDi Development. All rights reserved.
 //
 
-import Foundation
-import Typhoon
+import UIKit
 
-class HistoryModuleAssembly: TyphoonAssembly{
+struct HistoryModuleAssembly {
     
-    var storyboardAssembly: StoryboardAssebmly!
-    var emptyTableViewAssembly: EmptyTableViewDelegateAssembly!
+    let storyboardAssembly = StoryboardAssebmly()
+    let tabBarAssembly = TabBarItemAssembly()
+    let emptyTableViewAssembly = EmptyTableViewDelegateAssembly()
     
-    public dynamic func setupHistoryController() -> Any {
-        return TyphoonDefinition.withClass(HistoryNotesViewCotnroller.self, configuration: { (definition) in
-            definition?.injectProperty(#selector(getter: HistoryNotesViewCotnroller.emptyDelagateDataSource),
-                                       with: self.emptyTableViewAssembly.historyEmptyViewDelegate())
-        })
+     func historyViewController() -> HistoryNotesViewCotnroller {
+        let controller =  storyboardAssembly
+            .mainStoryboard()
+            .instantiateViewController(withIdentifier: "HistoryNotesViewCotnroller") as! HistoryNotesViewCotnroller
+        
+        controller.emptyDelagateDataSource = emptyTableViewAssembly.historyEmptyViewDelegate()
+        
+        return controller
     }
     
-    public dynamic func historyViewController() -> Any {
-        return TyphoonDefinition.withFactory(storyboardAssembly.mainStoryboard(),
-                                             selector: #selector(UIStoryboard.instantiateViewController(withIdentifier:)),
-                                             parameters: { (factoryMethod) in
-                                                factoryMethod?.injectParameter(with: "HistoryNotesViewCotnroller")
-        })
+    func historyViewControllerTabModule() -> UINavigationController {
+        let navigation = UINavigationController(rootViewController: historyViewController())
+        navigation.tabBarItem = tabBarAssembly.historyTabBarItem()
+        
+        return navigation
     }
 
 }
 
-class TodayModuleAssembly: TyphoonAssembly{
+struct TodayModuleAssembly {
     
-    var storyboardAssembly: StoryboardAssebmly!
+    let storyboardAssembly = StoryboardAssebmly()
+    let tabBarAssembly = TabBarItemAssembly()
     
-    public dynamic func setupTodayController() -> Any {
-        return TyphoonDefinition.withClass(TodayNoteViewController.self, configuration: { (definition) in
+    func todayNoteViewController() -> TodayNoteViewController {
+        let controller =  storyboardAssembly
+            .mainStoryboard()
+            .instantiateViewController(withIdentifier: "TodayNoteViewController") as! TodayNoteViewController
+        
+        return controller
+    }
+    
+    func todayNoteViewControllerTabModule() -> UINavigationController {
+            let navigation = UINavigationController(rootViewController: todayNoteViewController())
+            navigation.tabBarItem = tabBarAssembly.todayNoteTabBarItem()
             
-        })
-    }
-    
-    public dynamic func todayNoteViewController() -> Any {
-        return TyphoonDefinition.withFactory(storyboardAssembly.mainStoryboard(),
-                                             selector: #selector(UIStoryboard.instantiateViewController(withIdentifier:)),
-                                             parameters: { (factoryMethod) in
-                                                factoryMethod?.injectParameter(with: "TodayNoteViewController")
-                                                
-        })
+            return navigation
     }
 }
 
-class DatePickerModuleAssembly: TyphoonAssembly {
-    var storyboardAssembly: StoryboardAssebmly!
+struct AddNoteModuleAssembly  {
     
-    public dynamic func datePickerViewController() -> Any{
-        return TyphoonDefinition.withFactory(storyboardAssembly.mainStoryboard(),
-                                             selector: #selector(UIStoryboard.instantiateViewController(withIdentifier:)),
-                                             parameters: { (factoryMethod) in
-                                                factoryMethod?.injectParameter(with: "DatePickerViewController")
-                                                
-        })
+    let storyboardAssembly = StoryboardAssebmly()
+    let saveInteractor = SaveNoteInteractorAssemlby()
+    let tabBarAssembly = TabBarItemAssembly()
+    
+    func addNoteViewController() -> AddNoteViewController {
+        let controller =  storyboardAssembly
+            .mainStoryboard()
+            .instantiateViewController(withIdentifier: "AddNoteViewController") as! AddNoteViewController
+        
+        controller.saveInteractor = saveInteractor.realmSaveNoteInteractor()
+        
+        return controller
+    }
+    
+    func addNoteViewControllerTabModule() -> UINavigationController {
+            let navigation = UINavigationController(rootViewController: addNoteViewController())
+            navigation.tabBarItem = tabBarAssembly.addNoteTabBarItem()
+            return navigation
     }
 }
 
-class AddNoteModuleAssembly: TyphoonAssembly {
-    var storyboardAssembly: StoryboardAssebmly!
-    var datePickerAssembly: DatePickerModuleAssembly!
-    var saveInteractor: SaveNoteInteractorAssemlby!
+struct EmptyTableViewDelegateAssembly {
     
-    public dynamic func setupAddNoteViewController() -> Any {
-        return TyphoonDefinition.withClass(AddNoteViewController.self,
-                                           configuration: { (definition) in
-                                            definition?.injectProperty(#selector(getter: AddNoteViewController.datePicker),
-                                                                       with: self.datePickerAssembly.datePickerViewController())
-                                            definition?.injectProperty(#selector(getter: AddNoteViewController.saveInteractor),
-                                                                       with: self.saveInteractor.realmSaveNoteInteractor())
-        })
+    func todayPlansEmptyViewDelegate() -> EmptyViewDataSourceDelegate {
+        return EmptyViewDataSourceDelegate(title: "Today you haven't any plans", buttonTitle: "Add plans!")
     }
     
-    public dynamic func addNoteViewController() -> Any{
-        return TyphoonDefinition.withFactory(storyboardAssembly.mainStoryboard(),
-                                             selector: #selector(UIStoryboard.instantiateViewController(withIdentifier:)),
-                                             parameters: { (factoryMethod) in
-                                                factoryMethod?.injectParameter(with: "AddNoteViewController")
-                                                
-        })
-    }
-}
-
-class EmptyTableViewDelegateAssembly: TyphoonAssembly{
-    
-    public dynamic func todayPlansEmptyViewDelegate() -> Any {
-        return TyphoonDefinition.withClass(EmptyViewDataSourceDelegate.self, configuration: { (definition) in
-            definition?.useInitializer(#selector(EmptyViewDataSourceDelegate.init(title:buttonTitle:)),
-                                       parameters: { initializer in
-                                        initializer?.injectParameter(with: "Today you haven't any plans")
-                                        initializer?.injectParameter(with: "Add plans!")
-                })
-        })
-    }
-    
-    public dynamic func historyEmptyViewDelegate() -> Any {
-        return TyphoonDefinition.withClass(EmptyViewDataSourceDelegate.self, configuration: { (definition) in
-            definition?.useInitializer(#selector(EmptyViewDataSourceDelegate.init(title:buttonTitle:)),
-                                       parameters: { initializer in
-                                        initializer?.injectParameter(with: "You don't add any plans")
-                                        initializer?.injectParameter(with: "Create new one")
-            })
-        })
+    func historyEmptyViewDelegate() -> EmptyViewDataSourceDelegate {
+         return EmptyViewDataSourceDelegate(title: "You don't add any plans", buttonTitle: "Create new one")
     }
     
 }

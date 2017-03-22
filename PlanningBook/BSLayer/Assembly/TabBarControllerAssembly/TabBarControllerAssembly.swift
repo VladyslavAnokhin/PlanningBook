@@ -6,19 +6,15 @@
 //  Copyright © 2017 DDi Development. All rights reserved.
 //
 
-import Foundation
-import Typhoon
+import UIKit
 
-class TabBarControllerAssembly: TyphoonAssembly {
+struct TabBarControllerAssembly {
     
-    var controllersAssembly: ControllersForTabBarAssembly!
+    let controllersAssembly = ControllersForTabBarAssembly()
     
-    public dynamic func tabBarController() -> Any {
-        return TyphoonDefinition.withClass(TabBarController.self,
-                                           configuration: { definition  in
-                                            definition?.injectProperty(#selector(getter: TabBarController.viewControllers),
-                                                                       with: self.controllersAssembly.viewControllers())
-                                            
-        })
+    func appleTabBar() -> UITabBarController {
+        let tabBar = TabBarController()
+        tabBar.viewControllers = controllersAssembly.viewControllers()
+        return tabBar
     }
 }

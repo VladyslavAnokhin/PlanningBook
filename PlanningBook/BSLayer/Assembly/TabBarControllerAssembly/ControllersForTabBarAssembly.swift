@@ -6,36 +6,18 @@
 //  Copyright © 2017 DDi Development. All rights reserved.
 //
 
-import Foundation
-import Typhoon
+import UIKit
 
-class ControllersForTabBarAssembly: TyphoonAssembly {
+struct ControllersForTabBarAssembly {
     
-    var tabBarAssembly: TabBarItemAssembly!
+    let todayModule = TodayModuleAssembly()
+    let historyModule = HistoryModuleAssembly()
+    let addNoteModule = AddNoteModuleAssembly()
     
-    var todayModule: TodayModuleAssembly!
-    var historyModule: HistoryModuleAssembly!
-    var addNoteModule: AddNoteModuleAssembly!
-    
-    public dynamic func viewControllers() -> Any {
-        return TyphoonDefinition.withClass(NSMutableArray.self, configuration: {definition in
-            
-            let tabsArray = [
-                              self.todayModule.todayNoteViewController(),
-                              self.addNoteModule.addNoteViewController(),
-                              self.historyModule.historyViewController()
-                            ]
-            
-            definition?.useInitializer(#selector(NSMutableArray.init(capacity:)),
-                                       parameters: { (initializer) in
-                                        initializer?.injectParameter(with: tabsArray.count)
-            })
-            
-            definition?.injectMethod(#selector(NSMutableArray.addObjects(from:)),
-                                     parameters: {typhoonMethod in
-                                        typhoonMethod?.injectParameter(with: tabsArray)
-            })
-        })
+    func viewControllers() -> [UINavigationController] {
+        return [todayModule.todayNoteViewControllerTabModule(),
+                addNoteModule.addNoteViewControllerTabModule(),
+                historyModule.historyViewControllerTabModule()]
     }
     
 }

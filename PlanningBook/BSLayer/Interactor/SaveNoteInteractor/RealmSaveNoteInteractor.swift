@@ -17,26 +17,7 @@ class RealmSaveNoteInteractor: NSObject{
 extension RealmSaveNoteInteractor: SaveNoteInteractorProtocol {
     
     func saveNote(note: Note, withCompletion completion: BoolCompletion ) {
-        let realmNote = RealmNote()
-        realmNote.title = note.title
-        realmNote.body = note.body
-        
-        // end can't be less than start
-        realmNote.startDate = note.dateRange.start
-        realmNote.endDate = note.dateRange.end
-        
-        if realm == nil {
-            realm = try! Realm()
-        }
-        
-        do {
-            try realm?.write {
-                realm?.add(realmNote)
-                completion(true, nil)
-            }
-        } catch let error {
-            completion(false, error as NSError?)
-        }
+
         
     }
     

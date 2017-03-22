@@ -20,21 +20,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>TyphoonInitialAssemblies</key>
-	<array>
-		<string>TabBarAppConfiguratorAssembly</string>
-		<string>SaveNoteInteractorAssemlby</string>
-		<string>DatePickerModuleAssembly</string>
-		<string>AddNoteModuleAssembly</string>
-		<string>EmptyTableViewDelegateAssembly</string>
-		<string>TodayModuleAssembly</string>
-		<string>HistoryModuleAssembly</string>
-		<string>StoryboardAssebmly</string>
-		<string>ControllersForTabBarAssembly</string>
-		<string>TabBarControllerAssembly</string>
-		<string>TabBarItemAssembly</string>
-		<string>AppDelegateAssembly</string>
-	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

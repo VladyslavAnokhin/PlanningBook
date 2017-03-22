@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import Typhoon
 
-class SaveNoteInteractorAssemlby: TyphoonAssembly{
+struct SaveNoteInteractorAssemlby {
     
-    public dynamic func realmSaveNoteInteractor() -> Any {
-        return TyphoonDefinition.withClass( RealmSaveNoteInteractor.self )
+    func realmSaveNoteInteractor() -> RealmSaveNoteInteractor {
+        return RealmSaveNoteInteractor()
     }
 }

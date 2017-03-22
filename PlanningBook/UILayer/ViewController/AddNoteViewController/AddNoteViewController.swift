@@ -79,5 +79,93 @@ class AddNoteViewController: UIViewController {
         
         return note
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        performSegue(withIdentifier: "SelectCategorySegue", sender: nil)
+    }
+}
+
+
+class BaseTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
+    
+    let presenter: UIViewControllerAnimatedTransitioning
+    let dismisser: UIViewControllerAnimatedTransitioning
+    
+    init(presenter: UIViewControllerAnimatedTransitioning, dismisser: UIViewControllerAnimatedTransitioning){
+        self.presenter = presenter
+        self.dismisser = dismisser
+        super.init()
+    }
+    
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return dismisser
+    }
+    
+    func animationControllerForPresentedController(presented: UIViewController,
+                                                   presentingController presenting: UIViewController,
+                                                   sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return presenter
+    }
+}
+
+class PresentationTransition: NSObject, UIViewControllerAnimatedTransitioning {
+
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.72
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!
+        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
+        
+        let options = UIViewAnimationOptions.curveEaseIn
+        
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext),
+                                   delay: 0.0,
+                                   usingSpringWithDamping: 0.64,
+                                   initialSpringVelocity: 0.22,
+                                   options: options,
+                                   animations: {
+//                                        fromVC.view.transform = CGAffineTransform(translationX: -20, y: 0)
+                                        toVC.view.transform = CGAffineTransform(translationX: -20, y: 0)
+                                    },
+                                   completion: { finished in
+                                    
+                                    transitionContext.completeTransition(true)
+                                    }
+        )
+    }
+}
+
+class DismissTransition: NSObject, UIViewControllerAnimatedTransitioning {
+    
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.72
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)!
+        let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
+        
+        let options = UIViewAnimationOptions.curveEaseIn
+        
+        UIView.animate(withDuration: self.transitionDuration(using: transitionContext),
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.64,
+                       initialSpringVelocity: 0.22,
+                       options: options,
+                       animations: {
+                        
+        },
+                       completion: { finished in
+                        
+                        transitionContext.completeTransition(true)
+        }
+        )
+    }
 }
 

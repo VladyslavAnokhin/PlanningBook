@@ -142,11 +142,31 @@
                         <outlet property="noteTitleTextField" destination="eja-fd-FB0" id="Tbm-g2-U7V"/>
                         <outlet property="saveButton" destination="Fh4-Hk-TMO" id="jLL-y2-N3j"/>
                         <outlet property="startDateButton" destination="LsV-6G-Fu8" id="4Lp-m2-RUU"/>
+                        <segue destination="qOt-1P-P6X" kind="presentation" identifier="SelectCategorySegue" id="Y09-l1-pZP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERY-Of-baF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-74" y="-123"/>
+        </scene>
+        <!--Select Category View Controller-->
+        <scene sceneID="I1X-gD-h8w">
+            <objects>
+                <viewController storyboardIdentifier="SelectCategoryViewController" id="LGZ-7E-vtL" customClass="SelectCategoryViewController" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0E-6a-Z75"/>
+                        <viewControllerLayoutGuide type="bottom" id="g1A-rc-F9T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IDQ-N9-sNf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sxQ-Ud-Hbb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLC-I2-HWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1647.2" y="-123.68815592203899"/>
         </scene>
         <!--History Notes View Cotnroller-->
         <scene sceneID="YyS-Gh-Rop">
@@ -197,7 +217,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LRM-jB-O9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1201" y="513"/>
+            <point key="canvasLocation" x="708" y="546"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tdF-aG-pit">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qOt-1P-P6X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kXP-8d-cnn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LGZ-7E-vtL" kind="relationship" relationship="rootViewController" id="waN-0W-sIS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ch5-DT-dm8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="-123.68815592203899"/>
         </scene>
     </scenes>
 </document>

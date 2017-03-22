@@ -6,46 +6,19 @@
 //  Copyright © 2017 DDi Development. All rights reserved.
 //
 
-import Foundation
-import Typhoon
+import UIKit
 
-
-class TabBarItemAssembly: TyphoonAssembly{
-    
-    public dynamic func todayNoteTabBarItem() -> Any {
-        return TyphoonDefinition.withClass(UITabBarItem.self,
-                                           configuration: { (definition) in
-                                            definition?.useInitializer(#selector(UITabBarItem.init(title:image:selectedImage:)),
-                                                                       parameters: { (method) in
-                                                                        method?.injectParameter(with: "Today")
-                                                                        method?.injectParameter(with: nil)
-                                                                        method?.injectParameter(with: nil)
-                                            })
-        })
+struct TabBarItemAssembly{
+    func todayNoteTabBarItem() -> UITabBarItem {
+        return UITabBarItem(title: "Today", image: nil, selectedImage: nil)
     }
     
-    public dynamic func historyTabBarItem() -> Any {
-        return TyphoonDefinition.withClass(UITabBarItem.self,
-                                           configuration: { (definition) in
-                                            definition?.useInitializer(#selector(UITabBarItem.init(title:image:selectedImage:)),
-                                                                       parameters: { (method) in
-                                                                        method?.injectParameter(with: "History")
-                                                                        method?.injectParameter(with: nil)
-                                                                        method?.injectParameter(with: nil)
-                                            })
-        })
+    
+    func historyTabBarItem() -> UITabBarItem {
+         return UITabBarItem(title: "History", image: nil, selectedImage: nil)
     }
     
-    public dynamic func addNoteTabBarItem() -> Any {
-        return TyphoonDefinition.withClass(UITabBarItem.self,
-                                           configuration: { (definition) in
-                                            definition?.useInitializer(#selector(UITabBarItem.init(title:image:selectedImage:)),
-                                                                       parameters: { (method) in
-                                                                        method?.injectParameter(with: "Add Note")
-                                                                        method?.injectParameter(with: nil)
-                                                                        method?.injectParameter(with: nil)
-                                            })
-        })
+    func addNoteTabBarItem() -> UITabBarItem {
+        return UITabBarItem(title: "Add Note", image: nil, selectedImage: nil)
     }
-    
 }
