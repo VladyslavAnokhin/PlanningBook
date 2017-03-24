@@ -18,4 +18,14 @@ extension UITableView{
     
 }
 
+extension UICollectionView{
+    
+    func register<T: UICollectionViewCell>(cell cellType: T.Type)
+        where T: ReusableView, T: NibOwner {
+            let nib = UINib(nibName: T.nibName, bundle: nil)
+            register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
+    }
+    
+}
+
 

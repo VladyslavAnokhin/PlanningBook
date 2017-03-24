@@ -8,9 +8,9 @@
 
 import UIKit
 
-typealias DateBlock =  (Date)->()
 
-@objc protocol DatePickerViewProtocol {
+
+ protocol DatePickerViewProtocol {
     var recivePickedDate: DateBlock? {get set}
     
     func present(onViewController viewController: UIViewController, withDate date: Date? )

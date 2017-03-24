@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class SaveRealmNoteService: NSObject {
+class SaveRealmNoteService {
     
     var realm: Realm!
     

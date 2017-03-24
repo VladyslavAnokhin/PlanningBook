@@ -11,6 +11,7 @@ import UIKit
 class HistoryTableViewCell: UITableViewCell, NibOwner, ReusableView {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
     
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
@@ -18,8 +19,9 @@ class HistoryTableViewCell: UITableViewCell, NibOwner, ReusableView {
     var cellModel: HistoryTableViewCellModel!{
         didSet{
             titleLabel.text = cellModel.title
-            startDateLabel.text = cellModel.startDate
-            endDateLabel.text = cellModel.endDate
+            startDateLabel.text = "Start at  " + cellModel.startDate!
+            endDateLabel.text = "End at  " + cellModel.endDate!
+            categoryLabel.text = cellModel.category
         }
     }
 }

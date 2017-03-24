@@ -9,7 +9,6 @@
 import Foundation
 import DZNEmptyDataSet
 
-typealias VoidBlock = ()->()
 
 class EmptyViewDataSourceDelegate: NSObject, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     let title: String

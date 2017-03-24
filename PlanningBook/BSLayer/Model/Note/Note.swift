@@ -14,18 +14,6 @@ struct DateRange {
     let end: Date
 }
 
-struct Category {
-    let name: String
-    
-    init(name: String){
-        self.name = name
-    }
-    
-    init(realmCatgory: RealmCategory){
-        self.init(name: realmCatgory.name)
-    }
-}
-
 class Note: NSObject {
     var title: String
     var body: String

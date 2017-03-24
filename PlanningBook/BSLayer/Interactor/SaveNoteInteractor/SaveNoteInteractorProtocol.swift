@@ -8,8 +8,6 @@
 
 import Foundation
 
-typealias BoolCompletion = ((_ success: Bool, _ error: NSError?)->())
-
-@objc protocol SaveNoteInteractorProtocol{
+protocol SaveNoteInteractorProtocol{
     func saveNote(note: Note, withCompletion completion: BoolCompletion)
 }

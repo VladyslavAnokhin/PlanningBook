@@ -9,10 +9,6 @@
 import Foundation
 import RealmSwift
 
-class RealmCategory: Object {
-    dynamic var name: String = ""
-}
-
 class RealmNote: Object{
     dynamic var title: String = ""
     dynamic var body: String = ""

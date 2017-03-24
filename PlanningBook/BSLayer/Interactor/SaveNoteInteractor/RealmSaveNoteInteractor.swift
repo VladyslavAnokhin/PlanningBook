@@ -10,15 +10,18 @@ import Foundation
 import RealmSwift
 
 
-class RealmSaveNoteInteractor: NSObject{
-    var realm: Realm?
+class RealmSaveNoteInteractor {
+    var saveNoteService: SaveRealmNoteService!
+    
+    init(){
+        saveNoteService = SaveRealmNoteService()
+    }
 }
 
 extension RealmSaveNoteInteractor: SaveNoteInteractorProtocol {
     
     func saveNote(note: Note, withCompletion completion: BoolCompletion ) {
-
-        
+        saveNoteService.save(singleNote: note, completion: completion)
     }
     
 }

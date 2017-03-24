@@ -9,13 +9,12 @@
 import Foundation
 import RealmSwift
 
-class FetchRealmNoteService: NSObject {
+class FetchRealmNoteService {
     
     var realm: Realm!
     var result: Results<RealmNote>!
     
-    override init(){
-        super.init()
+    init(){
         self.realm = try! Realm()
     }
     

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="83"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="82.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gr-5Y-Gsd">
-                        <rect key="frame" x="8" y="8" width="304" height="31"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gr-5Y-Gsd">
+                        <rect key="frame" x="8" y="8" width="150" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="hha-VJ-h31"/>
                         </constraints>
@@ -30,15 +31,15 @@
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TGk-FU-zOg">
                         <rect key="frame" x="0.0" y="46" width="320" height="36"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxQ-qh-EtY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxQ-qh-EtY">
                                 <rect key="frame" x="0.0" y="0.0" width="160" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMU-GN-OPP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMU-GN-OPP">
                                 <rect key="frame" x="160" y="0.0" width="160" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,17 +49,28 @@
                             <constraint firstItem="WMU-GN-OPP" firstAttribute="width" secondItem="gxQ-qh-EtY" secondAttribute="width" id="Z1A-wV-Zdz"/>
                         </constraints>
                     </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y4v-Hx-aKZ">
+                        <rect key="frame" x="162" y="8" width="150" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="Y4v-Hx-aKZ" secondAttribute="trailing" id="0aI-Ys-RjD"/>
                     <constraint firstItem="6Gr-5Y-Gsd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="AsN-lN-k8l"/>
                     <constraint firstItem="6Gr-5Y-Gsd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Gas-Lq-1e7"/>
                     <constraint firstAttribute="trailing" secondItem="TGk-FU-zOg" secondAttribute="trailing" id="MaH-lI-r4z"/>
+                    <constraint firstItem="Y4v-Hx-aKZ" firstAttribute="centerY" secondItem="6Gr-5Y-Gsd" secondAttribute="centerY" id="Pcb-lp-bbs"/>
+                    <constraint firstItem="Y4v-Hx-aKZ" firstAttribute="height" secondItem="6Gr-5Y-Gsd" secondAttribute="height" id="S7A-jT-B1z"/>
                     <constraint firstAttribute="bottom" secondItem="TGk-FU-zOg" secondAttribute="bottom" id="X2K-um-cCg"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="6Gr-5Y-Gsd" secondAttribute="trailing" id="Zsc-q7-Utb"/>
+                    <constraint firstItem="6Gr-5Y-Gsd" firstAttribute="width" secondItem="Y4v-Hx-aKZ" secondAttribute="height" multiplier="5:1" id="jBp-rj-vSE"/>
+                    <constraint firstItem="Y4v-Hx-aKZ" firstAttribute="width" secondItem="6Gr-5Y-Gsd" secondAttribute="width" id="t7p-f9-zN6"/>
                     <constraint firstItem="TGk-FU-zOg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="v3B-aJ-Pyi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="categoryLabel" destination="Y4v-Hx-aKZ" id="BdX-jO-Igt"/>
                 <outlet property="endDateLabel" destination="WMU-GN-OPP" id="fse-Ez-sxQ"/>
                 <outlet property="startDateLabel" destination="gxQ-qh-EtY" id="Mfb-Lu-G0a"/>
                 <outlet property="titleLabel" destination="6Gr-5Y-Gsd" id="65d-Ow-7rS"/>

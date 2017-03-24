@@ -8,9 +8,7 @@
 
 import Foundation
 
-typealias NoteArrayCompletion = ([Note]?, NSError?)->()
-
-@objc protocol HistoryNotesInteracotProtocol{
+ protocol HistoryNotesInteracotProtocol{
     func fetchHistoryFeed(withCompletion completion: NoteArrayCompletion )
     func fetchNextOffset(withCompletion completion: NoteArrayCompletion )
 }

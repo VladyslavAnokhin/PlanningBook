@@ -13,10 +13,11 @@ struct ControllersForTabBarAssembly {
     let todayModule = TodayModuleAssembly()
     let historyModule = HistoryModuleAssembly()
     let addNoteModule = AddNoteModuleAssembly()
+    let selectCategory = CategoryPickerModuleAssembly()
     
     func viewControllers() -> [UINavigationController] {
         return [todayModule.todayNoteViewControllerTabModule(),
-                addNoteModule.addNoteViewControllerTabModule(),
+                selectCategory.categoryPickerViewControllerTabModule(),
                 historyModule.historyViewControllerTabModule()]
     }
     

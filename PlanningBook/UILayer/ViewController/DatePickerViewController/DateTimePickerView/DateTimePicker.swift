@@ -9,7 +9,7 @@
 import UIKit
 
 
-@objc public class DateTimePicker: UIView {
+ public class DateTimePicker: UIView {
     
     let contentHeight: CGFloat = 310
     
@@ -88,7 +88,7 @@ import UIKit
     internal var components: DateComponents!
     
     
-    @objc open class func show(selected: Date? = nil, minimumDate: Date? = nil, maximumDate: Date? = nil) -> DateTimePicker {
+     open class func show(selected: Date? = nil, minimumDate: Date? = nil, maximumDate: Date? = nil) -> DateTimePicker {
         let dateTimePicker = DateTimePicker()
         dateTimePicker.selectedDate = selected ?? Date()
         dateTimePicker.minimumDate = minimumDate ?? Date(timeIntervalSinceNow: -3600 * 24 * 365 * 20)

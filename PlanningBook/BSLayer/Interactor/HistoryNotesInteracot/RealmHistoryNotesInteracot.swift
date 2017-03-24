@@ -21,7 +21,9 @@ class RealmHistoryNotesInteracot: NSObject {
         super.init()
         service = FetchRealmNoteService()
         today = Date().startOfDay
-        result = service.fetchRealmNotes(withEndDateBefore: today).result
+        result = service
+            .fetchRealmNotes(withEndDateBefore: today)
+            .result
     }
 }
 

@@ -31,7 +31,7 @@ class HistoryNotesViewCotnroller: UIViewController{
         interactor.fetchHistoryFeed { notes, error in
             if let notes = notes {
                 let dataForamtter = DateFormatter()
-                dataForamtter.dateFormat = "dd-MM-yyyy"
+                dataForamtter.dateFormat = "dd-MM-yyyy HH:mm"
                 
                 self.dataSource = notes.map{HistoryTableViewCellModel(note: $0, dataFormatter: dataForamtter)}
                 self.tableView.reloadData()
