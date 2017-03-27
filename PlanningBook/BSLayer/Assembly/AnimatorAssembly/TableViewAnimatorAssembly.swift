@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+struct TableViewBottomBounceAnimatorAssembly{
+    func animator() -> TableViewCellAnimator {
+        return TableViewBottomBounceAnimator()
+    }
+}

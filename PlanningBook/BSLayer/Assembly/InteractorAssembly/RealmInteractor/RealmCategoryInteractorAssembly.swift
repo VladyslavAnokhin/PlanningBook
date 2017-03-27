@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CategoryInteractorAssembly {
+struct RealmCategoryInteractorAssembly {
     
     func categoryInteractor() -> RealmCategoryInteractor {
         return RealmCategoryInteractor()

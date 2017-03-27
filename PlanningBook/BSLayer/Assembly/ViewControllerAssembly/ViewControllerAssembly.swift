@@ -10,9 +10,11 @@ import UIKit
 
 struct HistoryModuleAssembly {
     
-    let storyboardAssembly = StoryboardAssebmly()
-    let tabBarAssembly = TabBarItemAssembly()
+    let storyboardAssembly     = StoryboardAssebmly()
+    let tabBarItemAssembly     = TabBarItemAssembly()
     let emptyTableViewAssembly = EmptyTableViewDelegateAssembly()
+    let interactorAssembly     = RealmHistoryNotesInteracotAssembly()
+    let cellAnimatorAssembly   = TableViewBottomBounceAnimatorAssembly()
     
      func historyViewController() -> HistoryNotesViewCotnroller {
         let controller =  storyboardAssembly
@@ -21,13 +23,15 @@ struct HistoryModuleAssembly {
         
         controller.title = "HISTORY"
         controller.emptyDelagateDataSource = emptyTableViewAssembly.historyEmptyViewDelegate()
+        controller.interactor = interactorAssembly.historyInteractor()
+        controller.tableViewAnimator = cellAnimatorAssembly.animator()
         
         return controller
     }
     
     func historyViewControllerTabModule() -> UINavigationController {
         let navigation = UINavigationController(rootViewController: historyViewController())
-        navigation.tabBarItem = tabBarAssembly.historyTabBarItem()
+        navigation.tabBarItem = tabBarItemAssembly.historyTabBarItem()
         
         return navigation
     }
@@ -37,7 +41,7 @@ struct HistoryModuleAssembly {
 struct TodayModuleAssembly {
     
     let storyboardAssembly = StoryboardAssebmly()
-    let tabBarAssembly = TabBarItemAssembly()
+    let tabBarItemAssembly = TabBarItemAssembly()
     
     func todayNoteViewController() -> TodayNoteViewController {
         let controller =  storyboardAssembly
@@ -49,15 +53,16 @@ struct TodayModuleAssembly {
     
     func todayNoteViewControllerTabModule() -> UINavigationController {
             let navigation = UINavigationController(rootViewController: todayNoteViewController())
-            navigation.tabBarItem = tabBarAssembly.todayNoteTabBarItem()
+            navigation.tabBarItem = tabBarItemAssembly.todayNoteTabBarItem()
             return navigation
     }
 }
 
 struct CategoryPickerModuleAssembly {
-    let storyboardAssembly = StoryboardAssebmly()
-    let tabBarAssembly = TabBarItemAssembly()
-    let categoryInteractor = CategoryInteractorAssembly()
+    
+    let storyboardAssembly       = StoryboardAssebmly()
+    let tabBarItemAssembly       = TabBarItemAssembly()
+    let interactorAssembly       = RealmCategoryInteractorAssembly()
     let addNoteControllerFactory = AddNoteModuleAssembly()
     
     func categoryPickerViewController() -> SelectCategoryViewController{
@@ -65,7 +70,7 @@ struct CategoryPickerModuleAssembly {
             .mainStoryboard()
             .instantiateViewController(withIdentifier: "SelectCategoryViewController") as! SelectCategoryViewController
         controller.title = "CATEGORY"
-        controller.interactor = categoryInteractor.realmCategoryInteractor()
+        controller.interactor = interactorAssembly.categoryInteractor()
         controller.controllerFactory = addNoteControllerFactory
         
         return controller
@@ -73,7 +78,7 @@ struct CategoryPickerModuleAssembly {
     
     func categoryPickerViewControllerTabModule() -> UINavigationController {
         let navigation = UINavigationController(rootViewController: categoryPickerViewController())
-        navigation.tabBarItem = tabBarAssembly.addNoteTabBarItem()
+        navigation.tabBarItem = tabBarItemAssembly.addNoteTabBarItem()
         
         return navigation
     }
@@ -96,16 +101,16 @@ struct DatePickerModuleAssembly  {
 struct AddNoteModuleAssembly  {
     
     let storyboardAssembly = StoryboardAssebmly()
-    let saveInteractor = SaveNoteInteractorAssemlby()
-    let datePicker = DatePickerModuleAssembly()
+    let interactorAssembly = RealmSaveNoteInteractorAssemlby()
+    let datePickerAssembly = DatePickerModuleAssembly()
     
     func addNoteViewController() -> AddNoteViewController {
         let controller =  storyboardAssembly
             .mainStoryboard()
             .instantiateViewController(withIdentifier: "AddNoteViewController") as! AddNoteViewController
         
-        controller.saveInteractor = saveInteractor.realmSaveNoteInteractor()
-        controller.datePicker = datePicker.datePickeriewController()
+        controller.saveInteractor = interactorAssembly.saveNoteInteractor()
+        controller.datePicker = datePickerAssembly.datePickeriewController()
         
         return controller
     }

@@ -12,13 +12,17 @@ import AVFoundation
 struct HistoryTableViewCellModel{
     var title: String?
     var category: String?
-    var startDate: String?
-    var endDate: String?
+    var time: String?
     
-    init(note: Note, dataFormatter: DateFormatter){
+    init( note: Note ){
         self.title = note.title
         self.category = note.category.name
-        self.startDate = dataFormatter.string(from: note.dateRange.start)
-        self.endDate = dataFormatter.string(from: note.dateRange.end)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm"
+        
+        let start = dateFormatter.string(from: note.dateRange.start)
+        let end = dateFormatter.string(from: note.dateRange.end)
+        
+        time = start + " - " + end
     }
 }

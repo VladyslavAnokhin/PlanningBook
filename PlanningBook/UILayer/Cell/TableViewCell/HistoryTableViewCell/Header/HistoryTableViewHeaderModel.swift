@@ -6,4 +6,8 @@
 //  Copyright © 2017 DDi Development. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct HistoryTableViewHeaderModel {
+    var title: String
+}

@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class HistoryNotesViewCotnroller: UIViewController{
     @IBOutlet weak var tableView: UITableView!{
         didSet{
@@ -17,24 +16,23 @@ class HistoryNotesViewCotnroller: UIViewController{
             tableView.register(cell: HistoryTableViewCell.self)
             tableView.tableFooterView = UIView()
             tableView.dataSource = self
+            tableView.delegate = self
         }
     }
     
-    var emptyDelagateDataSource: EmptyViewDataSourceDelegate!
-    var interactor: HistoryNotesInteracotProtocol! = RealmHistoryNotesInteracot()
+    var emptyDelagateDataSource  : EmptyViewDataSourceDelegate!
+    var interactor               : HistoryNotesInteracotProtocol!
+    var tableViewAnimator        : TableViewCellAnimator!
     
-    var dataSource = [HistoryTableViewCellModel]()
+    var historyTableViewModel = HistoryTableViewModel()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         interactor.fetchHistoryFeed { notes, error in
             if let notes = notes {
-                let dataForamtter = DateFormatter()
-                dataForamtter.dateFormat = "dd-MM-yyyy HH:mm"
-                
-                self.dataSource = notes.map{HistoryTableViewCellModel(note: $0, dataFormatter: dataForamtter)}
-                self.tableView.reloadData()
+                self.historyTableViewModel = HistoryTableViewModel(notes: notes)
+                self.tableViewAnimator.runAnimation(forTableView: self.tableView)
             }
         }
     }
@@ -43,15 +41,27 @@ class HistoryNotesViewCotnroller: UIViewController{
 
 extension HistoryNotesViewCotnroller: UITableViewDataSource {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return historyTableViewModel.sections.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return historyTableViewModel.sections[section].cells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.reuseIdentifier,
                                                  for: indexPath) as! HistoryTableViewCell
-        cell.cellModel = dataSource[indexPath.row]
+        let section = historyTableViewModel.sections[indexPath.section]
+        let cellModel = section.cells[indexPath.row]
+        cell.cellModel = cellModel
         return cell
     }
     
+}
+
+extension HistoryNotesViewCotnroller: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return historyTableViewModel.sections[section].header?.title
+    }
 }

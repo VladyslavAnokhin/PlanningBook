@@ -8,6 +8,23 @@
 
 import UIKit
 
-protocol ViewAnimator {
+protocol ViewAnimatorProtocol {
+    var animationDuration: TimeInterval {get set}
+    var candidates: [UIView]{ get set }
     
+    func beforeAnimation()
+    func animation()
+    func run()
+}
+
+extension ViewAnimatorProtocol{
+    func run(){
+        beforeAnimation()
+        animation()
+    }
+}
+
+
+protocol TableViewCellAnimator: ViewAnimatorProtocol {
+   mutating func runAnimation(forTableView tablView: UITableView)
 }

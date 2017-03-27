@@ -213,7 +213,7 @@
         <!--History Notes View Cotnroller-->
         <scene sceneID="YyS-Gh-Rop">
             <objects>
-                <viewController storyboardIdentifier="HistoryNotesViewCotnroller" id="mk7-kv-g84" customClass="HistoryNotesViewCotnroller" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryNotesViewCotnroller" automaticallyAdjustsScrollViewInsets="NO" id="mk7-kv-g84" customClass="HistoryNotesViewCotnroller" customModule="PlanningBook" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dcb-e3-0Mm"/>
                         <viewControllerLayoutGuide type="bottom" id="LEP-et-tZB"/>
@@ -222,7 +222,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J8z-wC-QzD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="J8z-wC-QzD">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
