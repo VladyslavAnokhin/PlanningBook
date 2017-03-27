@@ -10,7 +10,7 @@ import Foundation
 
 struct CategoryInteractorAssembly {
     
-    func realmCategoryInteractor() -> RealmCategoryInteractor {
+    func categoryInteractor() -> RealmCategoryInteractor {
         return RealmCategoryInteractor()
     }
 }

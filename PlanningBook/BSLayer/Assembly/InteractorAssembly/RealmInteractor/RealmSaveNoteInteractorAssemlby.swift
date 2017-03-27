@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct SaveNoteInteractorAssemlby {
+struct RealmSaveNoteInteractorAssemlby {
     
-    func realmSaveNoteInteractor() -> RealmSaveNoteInteractor {
+    func saveNoteInteractor() -> RealmSaveNoteInteractor {
         return RealmSaveNoteInteractor()
     }
 }
