@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HistoryTableViewHeader" customModule="PlanningBook" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="407" height="48"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZe-xF-uYM">
+                    <rect key="frame" x="203.5" y="8" width="195.5" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddJ-dS-CFc">
+                    <rect key="frame" x="8" y="8" width="195.5" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="eZe-xF-uYM" secondAttribute="bottom" constant="8" id="GI6-cd-YxC"/>
+                <constraint firstAttribute="bottom" secondItem="ddJ-dS-CFc" secondAttribute="bottom" constant="8" id="JIw-UI-piv"/>
+                <constraint firstItem="eZe-xF-uYM" firstAttribute="leading" secondItem="ddJ-dS-CFc" secondAttribute="trailing" id="TzB-Z6-ZxM"/>
+                <constraint firstItem="ddJ-dS-CFc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="WmL-yT-MLv"/>
+                <constraint firstAttribute="trailing" secondItem="eZe-xF-uYM" secondAttribute="trailing" constant="8" id="bwB-Mr-TKu"/>
+                <constraint firstItem="ddJ-dS-CFc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ceJ-YN-5pu"/>
+                <constraint firstItem="eZe-xF-uYM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="wZE-Za-hwG"/>
+                <constraint firstItem="eZe-xF-uYM" firstAttribute="width" secondItem="ddJ-dS-CFc" secondAttribute="width" id="xug-kO-T5x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dateLabel" destination="eZe-xF-uYM" id="cFQ-IH-58w"/>
+                <outlet property="dayLabel" destination="ddJ-dS-CFc" id="R8L-zp-Vrq"/>
+            </connections>
+            <point key="canvasLocation" x="115.5" y="-216"/>
+        </view>
+    </objects>
+</document>

@@ -16,6 +16,12 @@ extension UITableView{
             register(nib, forCellReuseIdentifier: T.reuseIdentifier)
     }
     
+    func register<T: UITableViewHeaderFooterView>(headerFooter headerFooterTypr: T.Type)
+        where T: ReusableView, T: NibOwner {
+            let nib = UINib(nibName: T.nibName, bundle: nil)
+            register(nib, forHeaderFooterViewReuseIdentifier: T.reuseIdentifier)
+    }
+    
 }
 
 extension UICollectionView{

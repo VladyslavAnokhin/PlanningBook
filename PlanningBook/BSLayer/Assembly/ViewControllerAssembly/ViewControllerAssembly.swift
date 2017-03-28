@@ -16,7 +16,7 @@ struct HistoryModuleAssembly {
     let interactorAssembly     = RealmHistoryNotesInteracotAssembly()
     let cellAnimatorAssembly   = TableViewBottomBounceAnimatorAssembly()
     
-     func historyViewController() -> HistoryNotesViewCotnroller {
+    func historyViewController() -> HistoryNotesViewCotnroller {
         let controller =  storyboardAssembly
             .mainStoryboard()
             .instantiateViewController(withIdentifier: "HistoryNotesViewCotnroller") as! HistoryNotesViewCotnroller
@@ -35,7 +35,7 @@ struct HistoryModuleAssembly {
         
         return navigation
     }
-
+    
 }
 
 struct TodayModuleAssembly {
@@ -52,9 +52,9 @@ struct TodayModuleAssembly {
     }
     
     func todayNoteViewControllerTabModule() -> UINavigationController {
-            let navigation = UINavigationController(rootViewController: todayNoteViewController())
-            navigation.tabBarItem = tabBarItemAssembly.todayNoteTabBarItem()
-            return navigation
+        let navigation = UINavigationController(rootViewController: todayNoteViewController())
+        navigation.tabBarItem = tabBarItemAssembly.todayNoteTabBarItem()
+        return navigation
     }
 }
 
@@ -123,7 +123,7 @@ struct EmptyTableViewDelegateAssembly {
     }
     
     func historyEmptyViewDelegate() -> EmptyViewDataSourceDelegate {
-         return EmptyViewDataSourceDelegate(title: "You don't add any plans", buttonTitle: "Create new one")
+        return EmptyViewDataSourceDelegate(title: "You don't add any plans", buttonTitle: "Create new one")
     }
     
 }

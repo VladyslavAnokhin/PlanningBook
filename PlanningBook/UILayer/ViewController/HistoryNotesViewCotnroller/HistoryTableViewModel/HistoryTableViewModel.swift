@@ -24,6 +24,36 @@ struct HistoryTableViewModel {
         
         sections = [HistoryTableViewSectionModel]()
         
+        var notesDictionary = notesDisctionary(fromNotes: notes)
+        
+        let sortedKeys = notesDictionary.keys.sorted{ (first, second) -> Bool in
+            return  first.year!  >= second.year! &&
+                    first.month! >= second.month! &&
+                    first.day!   > second.day!
+        }
+        
+        sortedKeys.forEach{ key in
+            let sectionNotes = notesDictionary[key]!.sorted(by: { (first, second) -> Bool in
+                return first.dateRange.start > second.dateRange.start
+            })
+            
+            let sectionDate = sectionNotes.first!.dateRange.start
+            let sectionHeaderModel = HistoryTableViewHeaderModel(date: sectionDate)
+            var cells = [HistoryTableViewCellModel]()
+            
+            sectionNotes.forEach({ (note) in
+                cells.append( HistoryTableViewCellModel(note: note) )
+            })
+            
+            let section = HistoryTableViewSectionModel(header: sectionHeaderModel,
+                                                       cells: cells)
+            self.sections.append(section)
+        }
+        
+    }
+    
+    private func notesDisctionary(fromNotes notes: [Note]) -> [DateComponents: [Note]]{
+        
         let calendar = Calendar(identifier: .gregorian)
         var components = Set<Calendar.Component>()
         components.insert(Calendar.Component.year)
@@ -41,25 +71,6 @@ struct HistoryTableViewModel {
             }
         }
         
-        let sortedKeys = notesDictionary.keys.sorted { (first, second) -> Bool in
-            return  first.year!  < second.year! &&
-                first.month! < second.month! &&
-                first.day!   < first.day!
-        }
-        
-        sortedKeys.forEach{ key in
-            let sectionNotes = notesDictionary[key]!
-            let headerTitle = String(key.month!)+" "+String(key.day!)+" "+String(key.year!)
-            var cells = [HistoryTableViewCellModel]()
-            
-            sectionNotes.forEach({ (note) in
-                cells.append(HistoryTableViewCellModel(note: note))
-            })
-            
-            let section = HistoryTableViewSectionModel(header: HistoryTableViewHeaderModel(title: headerTitle),
-                                                       cells: cells)
-            self.sections.append(section)
-        }
-        
+        return notesDictionary
     }
 }

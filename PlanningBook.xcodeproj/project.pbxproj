@@ -58,6 +58,9 @@
 		B184F20E1E895A5100969AC6 /* TableViewBottomBounceAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184F20D1E895A5100969AC6 /* TableViewBottomBounceAnimator.swift */; };
 		B184F2111E89672D00969AC6 /* RealmHistoryNotesInteracotAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184F2101E89672D00969AC6 /* RealmHistoryNotesInteracotAssembly.swift */; };
 		B184F2141E89680300969AC6 /* TableViewAnimatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184F2131E89680300969AC6 /* TableViewAnimatorAssembly.swift */; };
+		B184F2161E8A822D00969AC6 /* HistoryTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B184F2151E8A822D00969AC6 /* HistoryTableViewHeader.xib */; };
+		B184F2181E8A823F00969AC6 /* HistoryTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184F2171E8A823F00969AC6 /* HistoryTableViewHeader.swift */; };
+		B184F21A1E8A995F00969AC6 /* TableView+VisibleHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184F2191E8A995F00969AC6 /* TableView+VisibleHeaders.swift */; };
 		B1D6E5CB1E84450200D4739C /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D6E5C91E84450200D4739C /* CategoryCollectionViewCell.swift */; };
 		B1D6E5CC1E84450200D4739C /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D6E5CA1E84450200D4739C /* CategoryCollectionViewCell.xib */; };
 		B1D6E5CE1E84490B00D4739C /* CategoryCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D6E5CD1E84490B00D4739C /* CategoryCollectionViewCellModel.swift */; };
@@ -142,6 +145,9 @@
 		B184F20D1E895A5100969AC6 /* TableViewBottomBounceAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewBottomBounceAnimator.swift; path = UILayer/ViewAnimator/TableViewBottomBounceAnimator.swift; sourceTree = "<group>"; };
 		B184F2101E89672D00969AC6 /* RealmHistoryNotesInteracotAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmHistoryNotesInteracotAssembly.swift; path = BSLayer/Assembly/InteractorAssembly/RealmInteractor/RealmHistoryNotesInteracotAssembly.swift; sourceTree = "<group>"; };
 		B184F2131E89680300969AC6 /* TableViewAnimatorAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewAnimatorAssembly.swift; path = BSLayer/Assembly/AnimatorAssembly/TableViewAnimatorAssembly.swift; sourceTree = "<group>"; };
+		B184F2151E8A822D00969AC6 /* HistoryTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HistoryTableViewHeader.xib; path = UILayer/Cell/TableViewCell/HistoryTableViewCell/Header/HistoryTableViewHeader.xib; sourceTree = "<group>"; };
+		B184F2171E8A823F00969AC6 /* HistoryTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewHeader.swift; path = UILayer/Cell/TableViewCell/HistoryTableViewCell/Header/HistoryTableViewHeader.swift; sourceTree = "<group>"; };
+		B184F2191E8A995F00969AC6 /* TableView+VisibleHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TableView+VisibleHeaders.swift"; path = "BSLayer/Extension/TableView+VisibleHeaders.swift"; sourceTree = "<group>"; };
 		B1D6E5C91E84450200D4739C /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCell.swift; path = UILayer/Cell/CollectionViewCell/CategoryCollectionViewCell/CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1D6E5CA1E84450200D4739C /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = UILayer/Cell/CollectionViewCell/CategoryCollectionViewCell/CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		B1D6E5CD1E84490B00D4739C /* CategoryCollectionViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCellModel.swift; path = UILayer/Cell/CollectionViewCell/CategoryCollectionViewCell/CategoryCollectionViewCellModel.swift; sourceTree = "<group>"; };
@@ -499,6 +505,7 @@
 			isa = PBXGroup;
 			children = (
 				9A3DC9671E671F43005573BD /* TableView+Register.swift */,
+				B184F2191E8A995F00969AC6 /* TableView+VisibleHeaders.swift */,
 				9A2D341C1E75908700419FC1 /* RealmResult+Paging.swift */,
 			);
 			name = Extension;
@@ -582,6 +589,8 @@
 		B184F2071E8952C300969AC6 /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				B184F2151E8A822D00969AC6 /* HistoryTableViewHeader.xib */,
+				B184F2171E8A823F00969AC6 /* HistoryTableViewHeader.swift */,
 				B184F2081E8952DF00969AC6 /* HistoryTableViewHeaderModel.swift */,
 			);
 			name = Header;
@@ -744,6 +753,7 @@
 				9A038C811E6CD1BD00559A1E /* HistoryTableViewCell.xib in Resources */,
 				9A3DC9291E671B15005573BD /* LaunchScreen.storyboard in Resources */,
 				9A3DC9261E671B15005573BD /* Assets.xcassets in Resources */,
+				B184F2161E8A822D00969AC6 /* HistoryTableViewHeader.xib in Resources */,
 				9A3DC9241E671B15005573BD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -870,6 +880,7 @@
 				B184F20C1E89598F00969AC6 /* ViewAnimatorProtocol.swift in Sources */,
 				9A19B1341E6B6F4C000229B9 /* DateTimePicker.swift in Sources */,
 				9A3DC9751E678B46005573BD /* XibLoadeblView.swift in Sources */,
+				B184F2181E8A823F00969AC6 /* HistoryTableViewHeader.swift in Sources */,
 				9A19B1331E6B6F4C000229B9 /* DateCollectionViewCell.swift in Sources */,
 				9A3DC95D1E671EAB005573BD /* ReusableView.swift in Sources */,
 				9A19B12F1E6B6D91000229B9 /* DatePickerViewController.swift in Sources */,
@@ -895,6 +906,7 @@
 				B1D6E5D31E844F4B00D4739C /* RealmCategory.swift in Sources */,
 				9A3DC94B1E671DDA005573BD /* TabBarItemAssembly.swift in Sources */,
 				9A2D34131E74AAB700419FC1 /* HistoryNotesInteracotProtocol.swift in Sources */,
+				B184F21A1E8A995F00969AC6 /* TableView+VisibleHeaders.swift in Sources */,
 				9A2D34191E74BA9000419FC1 /* FetchRealmNoteService.swift in Sources */,
 				9A7A7E761E7374E900155FEE /* Paging.swift in Sources */,
 				9A3DC9541E671E6E005573BD /* TabBarController.swift in Sources */,

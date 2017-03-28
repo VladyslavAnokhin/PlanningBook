@@ -14,9 +14,11 @@ class HistoryNotesViewCotnroller: UIViewController{
             tableView.emptyDataSetSource = emptyDelagateDataSource
             tableView.emptyDataSetDelegate = emptyDelagateDataSource
             tableView.register(cell: HistoryTableViewCell.self)
+            tableView.register(headerFooter: HistoryTableViewHeader.self)
             tableView.tableFooterView = UIView()
             tableView.dataSource = self
             tableView.delegate = self
+            tableView.backgroundColor = .clear
         }
     }
     
@@ -25,6 +27,11 @@ class HistoryNotesViewCotnroller: UIViewController{
     var tableViewAnimator        : TableViewCellAnimator!
     
     var historyTableViewModel = HistoryTableViewModel()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor(white: 0.3, alpha: 1)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -61,7 +68,26 @@ extension HistoryNotesViewCotnroller: UITableViewDataSource {
 }
 
 extension HistoryNotesViewCotnroller: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return historyTableViewModel.sections[section].header?.title
+    
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryTableViewHeader.reuseIdentifier) as! HistoryTableViewHeader
+        return header.frame.height
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: HistoryTableViewHeader.reuseIdentifier) as! HistoryTableViewHeader
+        
+        let sectionModel = historyTableViewModel.sections[section]
+        let headerModel = sectionModel.header
+        
+        header.model = headerModel
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }

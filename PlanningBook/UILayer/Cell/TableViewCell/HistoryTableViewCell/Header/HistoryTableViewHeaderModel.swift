@@ -9,5 +9,23 @@
 import UIKit
 
 struct HistoryTableViewHeaderModel {
-    var title: String
+    var sectionDateString: String?
+    var weekDay: String?
+    
+    var color: UIColor
+    
+    init(){
+        color = UIColor(white: 0.3, alpha: 1)
+    }
+    
+    init(date: Date){
+        self.init()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM, dd yyyy"
+        sectionDateString = dateFormatter.string(from: date)
+        
+        dateFormatter.dateFormat = "EEEE"
+        weekDay = dateFormatter.string(from: date).uppercased()
+    }
 }

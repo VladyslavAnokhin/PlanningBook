@@ -16,32 +16,23 @@ struct TableViewBottomBounceAnimator: TableViewCellAnimator{
 
     mutating func runAnimation(forTableView tablView: UITableView){
         tablView.reloadData()
+        
         startYOffset = tablView.frame.height
-        candidates = tablView.visibleCells
+        let cells = tablView.visibleCells as [UIView]
+        let headers = tablView.visibleSectionHeaders as [UIView]
+        candidates = headers + cells
         
         run()
     }
     
     func beforeAnimation(){
-        candidates.forEach{cell in
-            cell.transform = CGAffineTransform(translationX: cell.frame.origin.x, y: startYOffset)
+        candidates.forEach{ cell in
+            cell.transform = CGAffineTransform(translationX: 0, y: startYOffset)
         }
     }
     
-    func animation() {
-        var delay: CGFloat = 0
-        candidates.forEach { (cell) in
-            UIView.animate(withDuration: animationDuration,
-                           delay: TimeInterval(delay),
-                           usingSpringWithDamping: 0.75,
-                           initialSpringVelocity: 0.85,
-                           options: [],
-                           animations: {
-                            cell.transform = .identity
-            },
-                           completion: nil)
-            
-            delay += 0.05
-        }
-    }
+}
+
+struct RandomTableViewAnimator: TableViewCellAnimator {
+    
 }

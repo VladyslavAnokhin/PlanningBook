@@ -15,12 +15,15 @@ class HistoryTableViewCell: UITableViewCell, NibOwner, ReusableView {
     
     @IBOutlet weak var timeLable: UILabel!
     
+    @IBOutlet weak var placeholderView: UIView!
     
     var cellModel: HistoryTableViewCellModel!{
         didSet{
             titleLabel.text = cellModel.title
             categoryLabel.text = cellModel.category
             timeLable.text = cellModel.time
+            backgroundColor = .clear
+            placeholderView.backgroundColor = cellModel.color
         }
     }
 }

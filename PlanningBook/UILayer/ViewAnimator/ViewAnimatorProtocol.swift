@@ -28,3 +28,22 @@ extension ViewAnimatorProtocol{
 protocol TableViewCellAnimator: ViewAnimatorProtocol {
    mutating func runAnimation(forTableView tablView: UITableView)
 }
+
+extension TableViewCellAnimator{
+     func animation() {
+        var delay: CGFloat = 0
+        candidates.forEach { (cell) in
+            UIView.animate(withDuration: animationDuration,
+                           delay: TimeInterval(delay),
+                           usingSpringWithDamping: 0.75,
+                           initialSpringVelocity: 0.85,
+                           options: [],
+                           animations: {
+                            cell.transform = .identity
+            },
+                           completion: nil)
+            
+            delay += 0.05
+        }
+    }
+}
