@@ -10,12 +10,14 @@ import Foundation
 
 struct Category {
     let name: String
+    let numberOfNotes: Int
     
-    init(name: String){
+    init(name: String, numberOfNotes: Int){
         self.name = name
+        self.numberOfNotes = numberOfNotes
     }
     
     init(realmCategory: RealmCategory){
-        self.init(name: realmCategory.name)
+        self.init(name: realmCategory.name, numberOfNotes: realmCategory.numberOfNotes)
     }
 }

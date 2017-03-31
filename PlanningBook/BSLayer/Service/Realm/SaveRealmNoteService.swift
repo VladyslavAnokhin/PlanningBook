@@ -23,6 +23,12 @@ class SaveRealmNoteService {
         realmNote.startDate = note.dateRange.start
         realmNote.endDate = note.dateRange.end
         
+        let realmCategory = RealmCategory()
+        realmCategory.name = note.category.name
+        realmCategory.numberOfNotes = note.category.numberOfNotes + 1
+        
+        realmNote.category = realmCategory
+        
         if realm == nil {
             realm = try! Realm()
         }

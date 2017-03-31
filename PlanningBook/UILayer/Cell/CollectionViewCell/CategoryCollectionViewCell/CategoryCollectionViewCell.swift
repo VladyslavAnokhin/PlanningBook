@@ -8,9 +8,10 @@
 
 import UIKit
 
-class CategoryCollectionViewCell: UICollectionViewCell, NibOwner, ReusableView {
+class CategoryCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var categoryNameLabel: UILabel!
+    @IBOutlet weak var numberOfNotesLabel: UILabel!
 
     var cellModel: CategoryCollectionViewCellModel!{
         didSet{

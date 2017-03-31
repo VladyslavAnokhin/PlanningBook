@@ -30,10 +30,10 @@ class SelectCategoryViewController: UIViewController {
     func fetchCategories(){
         interactor.fetch { (categories, error) in
             if let categories = categories {
-                let addNewOneCell = CategoryCollectionViewCellModel(name: "Add new one +")
+                let addNewOneCell = CategoryCollectionViewCellModel(name: "Add new one +", numberOfNotes: "")
                 self.dataSource.removeAll()
                 self.dataSource += [ addNewOneCell ]
-                self.dataSource += categories.map{ CategoryCollectionViewCellModel(cagegoty: $0) }
+                self.dataSource += categories.map{ CategoryCollectionViewCellModel(category: $0) }
                 self.collectionView.reloadData()
             }
         }
@@ -50,7 +50,7 @@ class SelectCategoryViewController: UIViewController {
             let tf = alertController.textFields!.first!
             
             if !tf.text!.isEmpty {
-                let newCategory = Category(name: tf.text!)
+                let newCategory = Category(name: tf.text!, numberOfNotes: 0)
                 self.interactor.save(newCategory: newCategory, completion: { (success, error) in
                     if success {
                         self.fetchCategories()
@@ -94,7 +94,8 @@ extension SelectCategoryViewController: UICollectionViewDelegateFlowLayout {
         } else {
             let nextController = controllerFactory.addNoteViewController()
             let cellModel = dataSource[indexPath.item]
-            let selectedCategory = Category(name: cellModel.name)
+            let selectedCategory = Category(name: cellModel.name,
+                                            numberOfNotes: Int( cellModel.numberOfNotes )! )
             nextController.category = selectedCategory
             navigationController?.pushViewController(nextController, animated: true)
         }

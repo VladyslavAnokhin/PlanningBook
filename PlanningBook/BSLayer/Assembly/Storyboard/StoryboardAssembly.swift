@@ -15,3 +15,9 @@ struct StoryboardAssebmly {
     }
     
 }
+
+extension UIStoryboard {
+    func controller<T: UIViewController>() -> T where T: NibOwner   {
+        return self.instantiateViewController(withIdentifier: T.nibName) as! T
+    }
+}

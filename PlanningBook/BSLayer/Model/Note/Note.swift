@@ -28,7 +28,7 @@ class Note: NSObject {
     }
     
     convenience init(realmNote: RealmNote){
-        let category = Category(name: "realmCatgory: realmNote.category")
+        let category = Category(realmCategory: realmNote.category)
         let dateRange = DateRange(start: realmNote.startDate!, end: realmNote.endDate!)
         self.init(title: realmNote.title, body: realmNote.body, category: category, dateRange: dateRange)
     }

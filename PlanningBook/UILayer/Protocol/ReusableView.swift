@@ -15,3 +15,6 @@ extension ReusableView  {
         return String(describing: self)
     }
 }
+
+extension UITableViewCell: ReusableView{}
+extension UICollectionViewCell: ReusableView{}

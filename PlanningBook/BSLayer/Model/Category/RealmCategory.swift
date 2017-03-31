@@ -11,4 +11,5 @@ import RealmSwift
 
 class RealmCategory: Object {
     dynamic var name: String = ""
+    dynamic var numberOfNotes: Int = 0
 }

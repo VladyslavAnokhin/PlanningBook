@@ -45,7 +45,7 @@
 		9A3DC9681E671F43005573BD /* TableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9671E671F43005573BD /* TableView+Register.swift */; };
 		9A3DC96C1E671F64005573BD /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC96B1E671F64005573BD /* Note.swift */; };
 		9A3DC96F1E677C01005573BD /* StoryboardAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC96E1E677C01005573BD /* StoryboardAssembly.swift */; };
-		9A3DC9721E677DC9005573BD /* ViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9711E677DC9005573BD /* ViewControllerAssembly.swift */; };
+		9A3DC9721E677DC9005573BD /* EmptyTableViewDelegateAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9711E677DC9005573BD /* EmptyTableViewDelegateAssembly.swift */; };
 		9A3DC9751E678B46005573BD /* XibLoadeblView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DC9741E678B46005573BD /* XibLoadeblView.swift */; };
 		9A7A7E761E7374E900155FEE /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A7E751E7374E900155FEE /* Paging.swift */; };
 		9AA5C5C31E6B54530013C866 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */; };
@@ -61,6 +61,13 @@
 		B184F2161E8A822D00969AC6 /* HistoryTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B184F2151E8A822D00969AC6 /* HistoryTableViewHeader.xib */; };
 		B184F2181E8A823F00969AC6 /* HistoryTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184F2171E8A823F00969AC6 /* HistoryTableViewHeader.swift */; };
 		B184F21A1E8A995F00969AC6 /* TableView+VisibleHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B184F2191E8A995F00969AC6 /* TableView+VisibleHeaders.swift */; };
+		B18D02881E8D58E7007E539F /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D02871E8D58E7007E539F /* NoteViewController.swift */; };
+		B18D028A1E8D5B6D007E539F /* HistoryModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D02891E8D5B6D007E539F /* HistoryModuleAssembly.swift */; };
+		B18D028C1E8D5B8E007E539F /* TodayModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D028B1E8D5B8E007E539F /* TodayModuleAssembly.swift */; };
+		B18D028E1E8D5BA9007E539F /* CategoryPickerModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D028D1E8D5BA9007E539F /* CategoryPickerModuleAssembly.swift */; };
+		B18D02901E8D5BCB007E539F /* DatePickerModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D028F1E8D5BCB007E539F /* DatePickerModuleAssembly.swift */; };
+		B18D02921E8D5BE8007E539F /* AddNoteModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D02911E8D5BE8007E539F /* AddNoteModuleAssembly.swift */; };
+		B18D02961E8D5C52007E539F /* NoteViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D02951E8D5C52007E539F /* NoteViewControllerAssembly.swift */; };
 		B1D6E5CB1E84450200D4739C /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D6E5C91E84450200D4739C /* CategoryCollectionViewCell.swift */; };
 		B1D6E5CC1E84450200D4739C /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D6E5CA1E84450200D4739C /* CategoryCollectionViewCell.xib */; };
 		B1D6E5CE1E84490B00D4739C /* CategoryCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D6E5CD1E84490B00D4739C /* CategoryCollectionViewCellModel.swift */; };
@@ -132,7 +139,7 @@
 		9A3DC9671E671F43005573BD /* TableView+Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TableView+Register.swift"; path = "BSLayer/Extension/TableView+Register.swift"; sourceTree = "<group>"; };
 		9A3DC96B1E671F64005573BD /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Note.swift; path = BSLayer/Model/Note/Note.swift; sourceTree = "<group>"; };
 		9A3DC96E1E677C01005573BD /* StoryboardAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardAssembly.swift; path = BSLayer/Assembly/Storyboard/StoryboardAssembly.swift; sourceTree = "<group>"; };
-		9A3DC9711E677DC9005573BD /* ViewControllerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewControllerAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/ViewControllerAssembly.swift; sourceTree = "<group>"; };
+		9A3DC9711E677DC9005573BD /* EmptyTableViewDelegateAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmptyTableViewDelegateAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/EmptyTableViewDelegateAssembly.swift; sourceTree = "<group>"; };
 		9A3DC9741E678B46005573BD /* XibLoadeblView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XibLoadeblView.swift; path = UILayer/XibLaodeblView/XibLoadeblView.swift; sourceTree = "<group>"; };
 		9A7A7E751E7374E900155FEE /* Paging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Paging.swift; path = BSLayer/Model/Paging/Paging.swift; sourceTree = "<group>"; };
 		9AA5C5C21E6B54530013C866 /* AddNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNoteViewController.swift; path = UILayer/ViewController/AddNoteViewController/AddNoteViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +155,13 @@
 		B184F2151E8A822D00969AC6 /* HistoryTableViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HistoryTableViewHeader.xib; path = UILayer/Cell/TableViewCell/HistoryTableViewCell/Header/HistoryTableViewHeader.xib; sourceTree = "<group>"; };
 		B184F2171E8A823F00969AC6 /* HistoryTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryTableViewHeader.swift; path = UILayer/Cell/TableViewCell/HistoryTableViewCell/Header/HistoryTableViewHeader.swift; sourceTree = "<group>"; };
 		B184F2191E8A995F00969AC6 /* TableView+VisibleHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TableView+VisibleHeaders.swift"; path = "BSLayer/Extension/TableView+VisibleHeaders.swift"; sourceTree = "<group>"; };
+		B18D02871E8D58E7007E539F /* NoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteViewController.swift; path = UILayer/ViewController/NoteViewController/NoteViewController.swift; sourceTree = "<group>"; };
+		B18D02891E8D5B6D007E539F /* HistoryModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryModuleAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/HistoryModuleAssembly.swift; sourceTree = "<group>"; };
+		B18D028B1E8D5B8E007E539F /* TodayModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodayModuleAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/TodayModuleAssembly.swift; sourceTree = "<group>"; };
+		B18D028D1E8D5BA9007E539F /* CategoryPickerModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryPickerModuleAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/CategoryPickerModuleAssembly.swift; sourceTree = "<group>"; };
+		B18D028F1E8D5BCB007E539F /* DatePickerModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerModuleAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/DatePickerModuleAssembly.swift; sourceTree = "<group>"; };
+		B18D02911E8D5BE8007E539F /* AddNoteModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNoteModuleAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/AddNoteModuleAssembly.swift; sourceTree = "<group>"; };
+		B18D02951E8D5C52007E539F /* NoteViewControllerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteViewControllerAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/NoteViewControllerAssembly.swift; sourceTree = "<group>"; };
 		B1D6E5C91E84450200D4739C /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCell.swift; path = UILayer/Cell/CollectionViewCell/CategoryCollectionViewCell/CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1D6E5CA1E84450200D4739C /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = UILayer/Cell/CollectionViewCell/CategoryCollectionViewCell/CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		B1D6E5CD1E84490B00D4739C /* CategoryCollectionViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCellModel.swift; path = UILayer/Cell/CollectionViewCell/CategoryCollectionViewCell/CategoryCollectionViewCellModel.swift; sourceTree = "<group>"; };
@@ -431,6 +445,7 @@
 		9A3DC94E1E671DF3005573BD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B18D02861E8D58BD007E539F /* NoteViewController */,
 				B14B047F1E82E22600346522 /* SelectCategoryViewController */,
 				9A19B12D1E6B6D72000229B9 /* DatePickerViewController */,
 				9AA5C5C11E6B542E0013C866 /* AddNoteViewController */,
@@ -541,7 +556,13 @@
 		9A3DC9701E677DAE005573BD /* ViewControllerAssembly */ = {
 			isa = PBXGroup;
 			children = (
-				9A3DC9711E677DC9005573BD /* ViewControllerAssembly.swift */,
+				9A3DC9711E677DC9005573BD /* EmptyTableViewDelegateAssembly.swift */,
+				B18D02951E8D5C52007E539F /* NoteViewControllerAssembly.swift */,
+				B18D028B1E8D5B8E007E539F /* TodayModuleAssembly.swift */,
+				B18D028D1E8D5BA9007E539F /* CategoryPickerModuleAssembly.swift */,
+				B18D028F1E8D5BCB007E539F /* DatePickerModuleAssembly.swift */,
+				B18D02911E8D5BE8007E539F /* AddNoteModuleAssembly.swift */,
+				B18D02891E8D5B6D007E539F /* HistoryModuleAssembly.swift */,
 			);
 			name = ViewControllerAssembly;
 			sourceTree = "<group>";
@@ -611,6 +632,14 @@
 				B184F2131E89680300969AC6 /* TableViewAnimatorAssembly.swift */,
 			);
 			name = AnimatorAssembly;
+			sourceTree = "<group>";
+		};
+		B18D02861E8D58BD007E539F /* NoteViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B18D02871E8D58E7007E539F /* NoteViewController.swift */,
+			);
+			name = NoteViewController;
 			sourceTree = "<group>";
 		};
 		B1D6E5C71E8444B800D4739C /* CollectionViewCell */ = {
@@ -881,6 +910,8 @@
 				9A19B1341E6B6F4C000229B9 /* DateTimePicker.swift in Sources */,
 				9A3DC9751E678B46005573BD /* XibLoadeblView.swift in Sources */,
 				B184F2181E8A823F00969AC6 /* HistoryTableViewHeader.swift in Sources */,
+				B18D028A1E8D5B6D007E539F /* HistoryModuleAssembly.swift in Sources */,
+				B18D02881E8D58E7007E539F /* NoteViewController.swift in Sources */,
 				9A19B1331E6B6F4C000229B9 /* DateCollectionViewCell.swift in Sources */,
 				9A3DC95D1E671EAB005573BD /* ReusableView.swift in Sources */,
 				9A19B12F1E6B6D91000229B9 /* DatePickerViewController.swift in Sources */,
@@ -895,13 +926,17 @@
 				9A3DC91F1E671B15005573BD /* AppDelegate.swift in Sources */,
 				9A19B1351E6B6F4C000229B9 /* StepCollectionViewFlowLayout.swift in Sources */,
 				B184F2091E8952DF00969AC6 /* HistoryTableViewHeaderModel.swift in Sources */,
+				B18D02961E8D5C52007E539F /* NoteViewControllerAssembly.swift in Sources */,
 				9A2D34221E75B2C900419FC1 /* RealmTodayNotesInteractor.swift in Sources */,
 				9A3DC95C1E671EAB005573BD /* NibOwner.swift in Sources */,
-				9A3DC9721E677DC9005573BD /* ViewControllerAssembly.swift in Sources */,
+				9A3DC9721E677DC9005573BD /* EmptyTableViewDelegateAssembly.swift in Sources */,
 				B1D6E5DB1E85795B00D4739C /* RealmCategoryInteractor.swift in Sources */,
 				9A19B1391E6C5848000229B9 /* DatePickerViewProtocol.swift in Sources */,
+				B18D02901E8D5BCB007E539F /* DatePickerModuleAssembly.swift in Sources */,
 				9A3DC96F1E677C01005573BD /* StoryboardAssembly.swift in Sources */,
 				B1D6E5D61E85712700D4739C /* CategoryInteractorProtocol.swift in Sources */,
+				B18D028E1E8D5BA9007E539F /* CategoryPickerModuleAssembly.swift in Sources */,
+				B18D02921E8D5BE8007E539F /* AddNoteModuleAssembly.swift in Sources */,
 				B184F2051E89448300969AC6 /* HistoryTableViewModel.swift in Sources */,
 				B1D6E5D31E844F4B00D4739C /* RealmCategory.swift in Sources */,
 				9A3DC94B1E671DDA005573BD /* TabBarItemAssembly.swift in Sources */,
@@ -917,6 +952,7 @@
 				B1D6E5DF1E857C5200D4739C /* SaveRealmCategoryService.swift in Sources */,
 				9A19B13F1E6C99AF000229B9 /* RealmNote.swift in Sources */,
 				B1D6E5D91E8571EF00D4739C /* Typealiases.swift in Sources */,
+				B18D028C1E8D5B8E007E539F /* TodayModuleAssembly.swift in Sources */,
 				9A3DC9491E671DDA005573BD /* ControllersForTabBarAssembly.swift in Sources */,
 				B184F20E1E895A5100969AC6 /* TableViewBottomBounceAnimator.swift in Sources */,
 				B1D6E5CE1E84490B00D4739C /* CategoryCollectionViewCellModel.swift in Sources */,

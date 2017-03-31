@@ -26,7 +26,10 @@ class HistoryNotesViewCotnroller: UIViewController{
     var interactor               : HistoryNotesInteracotProtocol!
     var tableViewAnimator        : TableViewCellAnimator!
     
+    var noteViewContrllerFactory: NoteViewControllerAssembly = NoteViewControllerAssembly()
+    
     var historyTableViewModel = HistoryTableViewModel()
+    var noteArray = [Note]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +42,7 @@ class HistoryNotesViewCotnroller: UIViewController{
         interactor.fetchHistoryFeed { notes, error in
             if let notes = notes {
                 self.historyTableViewModel = HistoryTableViewModel(notes: notes)
+                self.noteArray = notes
                 self.tableViewAnimator.runAnimation(forTableView: self.tableView)
             }
         }
@@ -88,6 +92,12 @@ extension HistoryNotesViewCotnroller: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let note = noteArray[indexPath.section + indexPath.row]
+        let controller = noteViewContrllerFactory.noteViewController()
+        controller.note = note
+        
+        present(controller, animated: true, completion: nil)
     }
     
 }

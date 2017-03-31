@@ -33,6 +33,3 @@ struct TableViewBottomBounceAnimator: TableViewCellAnimator{
     
 }
 
-struct RandomTableViewAnimator: TableViewCellAnimator {
-    
-}

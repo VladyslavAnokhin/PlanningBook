@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryTableViewCell: UITableViewCell, NibOwner, ReusableView {
+class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!

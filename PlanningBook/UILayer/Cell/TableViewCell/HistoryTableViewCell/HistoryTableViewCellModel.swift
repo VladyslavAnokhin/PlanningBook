@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 struct HistoryTableViewCellModel{
+    
     var title: String?
     var category: String?
     var time: String?
@@ -25,6 +26,7 @@ struct HistoryTableViewCellModel{
         
         self.title = note.title
         self.category = note.category.name
+        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         

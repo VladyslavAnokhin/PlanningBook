@@ -18,22 +18,30 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zaw-RZ-zVV">
-                        <rect key="frame" x="0.0" y="0.0" width="195" height="176"/>
+                        <rect key="frame" x="0.0" y="78.5" width="195" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDn-pV-s8s">
+                        <rect key="frame" x="83.5" y="106" width="28.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="zaw-RZ-zVV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="D2s-Yk-vQ2"/>
+                <constraint firstItem="zaw-RZ-zVV" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="GfM-7F-IiX"/>
                 <constraint firstAttribute="trailing" secondItem="zaw-RZ-zVV" secondAttribute="trailing" id="Lfl-l7-PJU"/>
                 <constraint firstItem="zaw-RZ-zVV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Q4h-yz-OrD"/>
-                <constraint firstAttribute="bottom" secondItem="zaw-RZ-zVV" secondAttribute="bottom" id="a0V-08-KTy"/>
+                <constraint firstItem="jDn-pV-s8s" firstAttribute="centerX" secondItem="zaw-RZ-zVV" secondAttribute="centerX" id="flo-NN-laP"/>
+                <constraint firstItem="jDn-pV-s8s" firstAttribute="top" secondItem="zaw-RZ-zVV" secondAttribute="bottom" constant="7" id="ylU-sr-jSr"/>
             </constraints>
             <size key="customSize" width="195" height="176"/>
             <connections>
                 <outlet property="categoryNameLabel" destination="zaw-RZ-zVV" id="L9l-5O-IkG"/>
+                <outlet property="numberOfNotesLabel" destination="jDn-pV-s8s" id="nB3-ha-VWi"/>
             </connections>
             <point key="canvasLocation" x="-100.5" y="95"/>
         </collectionViewCell>

@@ -16,3 +16,6 @@ extension NibOwner {
     }
 }
 
+extension UITableViewCell: NibOwner{}
+extension UICollectionViewCell: NibOwner{}
+extension UIViewController: NibOwner{}

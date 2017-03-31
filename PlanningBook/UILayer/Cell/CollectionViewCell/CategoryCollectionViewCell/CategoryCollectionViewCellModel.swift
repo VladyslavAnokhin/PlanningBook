@@ -10,12 +10,15 @@ import Foundation
 
 struct CategoryCollectionViewCellModel {
     var name: String
+    var numberOfNotes: String
     
-    init(name: String){
+    init(name: String, numberOfNotes: String){
         self.name = name
+        self.numberOfNotes = numberOfNotes
     }
     
-    init(cagegoty: Category){
-        self.name = cagegoty.name
+    init(category: Category){
+        self.name = category.name
+        self.numberOfNotes = String( category.numberOfNotes )
     }
 }
