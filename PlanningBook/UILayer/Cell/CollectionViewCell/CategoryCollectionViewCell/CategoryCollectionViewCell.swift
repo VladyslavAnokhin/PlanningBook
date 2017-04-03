@@ -16,6 +16,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     var cellModel: CategoryCollectionViewCellModel!{
         didSet{
             categoryNameLabel.text = cellModel.name
+            numberOfNotesLabel.text = cellModel.numberOfNotes
+            backgroundColor = cellModel.color
         }
     }
 }

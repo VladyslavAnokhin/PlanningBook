@@ -68,6 +68,8 @@
 		B18D02901E8D5BCB007E539F /* DatePickerModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D028F1E8D5BCB007E539F /* DatePickerModuleAssembly.swift */; };
 		B18D02921E8D5BE8007E539F /* AddNoteModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D02911E8D5BE8007E539F /* AddNoteModuleAssembly.swift */; };
 		B18D02961E8D5C52007E539F /* NoteViewControllerAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D02951E8D5C52007E539F /* NoteViewControllerAssembly.swift */; };
+		B1A4329A1E929AFB004FBB8F /* LeftRightViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A432991E929AFB004FBB8F /* LeftRightViewAnimator.swift */; };
+		B1A4329C1E929B30004FBB8F /* TableViewCellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A4329B1E929B30004FBB8F /* TableViewCellAnimator.swift */; };
 		B1D6E5CB1E84450200D4739C /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D6E5C91E84450200D4739C /* CategoryCollectionViewCell.swift */; };
 		B1D6E5CC1E84450200D4739C /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1D6E5CA1E84450200D4739C /* CategoryCollectionViewCell.xib */; };
 		B1D6E5CE1E84490B00D4739C /* CategoryCollectionViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D6E5CD1E84490B00D4739C /* CategoryCollectionViewCellModel.swift */; };
@@ -162,6 +164,8 @@
 		B18D028F1E8D5BCB007E539F /* DatePickerModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerModuleAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/DatePickerModuleAssembly.swift; sourceTree = "<group>"; };
 		B18D02911E8D5BE8007E539F /* AddNoteModuleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddNoteModuleAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/AddNoteModuleAssembly.swift; sourceTree = "<group>"; };
 		B18D02951E8D5C52007E539F /* NoteViewControllerAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NoteViewControllerAssembly.swift; path = BSLayer/Assembly/ViewControllerAssembly/NoteViewControllerAssembly.swift; sourceTree = "<group>"; };
+		B1A432991E929AFB004FBB8F /* LeftRightViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftRightViewAnimator.swift; path = UILayer/ViewAnimator/LeftRightViewAnimator.swift; sourceTree = "<group>"; };
+		B1A4329B1E929B30004FBB8F /* TableViewCellAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellAnimator.swift; path = UILayer/ViewAnimator/TableViewCellAnimator.swift; sourceTree = "<group>"; };
 		B1D6E5C91E84450200D4739C /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCell.swift; path = UILayer/Cell/CollectionViewCell/CategoryCollectionViewCell/CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B1D6E5CA1E84450200D4739C /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryCollectionViewCell.xib; path = UILayer/Cell/CollectionViewCell/CategoryCollectionViewCell/CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		B1D6E5CD1E84490B00D4739C /* CategoryCollectionViewCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCollectionViewCellModel.swift; path = UILayer/Cell/CollectionViewCell/CategoryCollectionViewCell/CategoryCollectionViewCellModel.swift; sourceTree = "<group>"; };
@@ -621,7 +625,9 @@
 			isa = PBXGroup;
 			children = (
 				B184F20B1E89598F00969AC6 /* ViewAnimatorProtocol.swift */,
+				B1A4329B1E929B30004FBB8F /* TableViewCellAnimator.swift */,
 				B184F20D1E895A5100969AC6 /* TableViewBottomBounceAnimator.swift */,
+				B1A432991E929AFB004FBB8F /* LeftRightViewAnimator.swift */,
 			);
 			name = ViewAnimator;
 			sourceTree = "<group>";
@@ -915,6 +921,7 @@
 				9A19B1331E6B6F4C000229B9 /* DateCollectionViewCell.swift in Sources */,
 				9A3DC95D1E671EAB005573BD /* ReusableView.swift in Sources */,
 				9A19B12F1E6B6D91000229B9 /* DatePickerViewController.swift in Sources */,
+				B1A4329A1E929AFB004FBB8F /* LeftRightViewAnimator.swift in Sources */,
 				9A038C7A1E6CA50B00559A1E /* RealmSaveNoteInteractor.swift in Sources */,
 				B12AFAAF1E81882B007D432C /* SaveRealmNoteService.swift in Sources */,
 				9A3DC9601E671EC2005573BD /* EmptyView.swift in Sources */,
@@ -954,6 +961,7 @@
 				B1D6E5D91E8571EF00D4739C /* Typealiases.swift in Sources */,
 				B18D028C1E8D5B8E007E539F /* TodayModuleAssembly.swift in Sources */,
 				9A3DC9491E671DDA005573BD /* ControllersForTabBarAssembly.swift in Sources */,
+				B1A4329C1E929B30004FBB8F /* TableViewCellAnimator.swift in Sources */,
 				B184F20E1E895A5100969AC6 /* TableViewBottomBounceAnimator.swift in Sources */,
 				B1D6E5CE1E84490B00D4739C /* CategoryCollectionViewCellModel.swift in Sources */,
 				9A3DC9681E671F43005573BD /* TableView+Register.swift in Sources */,

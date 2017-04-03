@@ -38,7 +38,7 @@ struct TabBarAppConfigurator: AppConfiguratorProtocol {
     
     let tabBarAssembly = TabBarControllerAssembly()
     
-    func rootController() -> UIViewController{
+    func rootController() -> UIViewController {
         return tabBarAssembly.appleTabBar()
     }
     

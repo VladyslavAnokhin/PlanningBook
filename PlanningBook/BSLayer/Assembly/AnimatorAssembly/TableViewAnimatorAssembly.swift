@@ -13,3 +13,9 @@ struct TableViewBottomBounceAnimatorAssembly{
         return TableViewBottomBounceAnimator()
     }
 }
+
+struct LeftRightViewAnimatorAssembly{
+    func animator() -> ViewAnimatorProtocol {
+        return LeftRightViewAnimator()
+    }
+}

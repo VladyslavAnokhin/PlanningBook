@@ -6,19 +6,21 @@
 //  Copyright © 2017 DDi Development. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct CategoryCollectionViewCellModel {
     var name: String
     var numberOfNotes: String
     
+    var color: UIColor
+    
     init(name: String, numberOfNotes: String){
+        self.color = UIColor(white: 0.7, alpha: 1)
         self.name = name
         self.numberOfNotes = numberOfNotes
     }
     
     init(category: Category){
-        self.name = category.name
-        self.numberOfNotes = String( category.numberOfNotes )
+        self.init(name: category.name, numberOfNotes: String( category.numberOfNotes ))
     }
 }

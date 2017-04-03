@@ -14,6 +14,7 @@ struct CategoryPickerModuleAssembly {
     let tabBarItemAssembly       = TabBarItemAssembly()
     let interactorAssembly       = RealmCategoryInteractorAssembly()
     let addNoteControllerFactory = AddNoteModuleAssembly()
+    let animatorAssembly         = LeftRightViewAnimatorAssembly()
     
     func categoryPickerViewController() -> SelectCategoryViewController{
         let controller = storyboardAssembly
@@ -22,6 +23,7 @@ struct CategoryPickerModuleAssembly {
         controller.title = "CATEGORY"
         controller.interactor = interactorAssembly.categoryInteractor()
         controller.controllerFactory = addNoteControllerFactory
+        controller.cellAnimator = animatorAssembly.animator()
         
         return controller
     }

@@ -18,20 +18,36 @@ class SelectCategoryViewController: UIViewController {
         }
     }
     
+    var cellAnimator: ViewAnimatorProtocol!
     var interactor: CategoryInteractorProtocol!
     var dataSource = [CategoryCollectionViewCellModel]()
+    
     var controllerFactory: AddNoteModuleAssembly!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor(white: 0.3, alpha: 1)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchCategories()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let visibleCell = self.collectionView.visibleCells
+        cellAnimator.candidates = visibleCell
+        cellAnimator.run()
+    }
+    
     func fetchCategories(){
         interactor.fetch { (categories, error) in
             if let categories = categories {
-                let addNewOneCell = CategoryCollectionViewCellModel(name: "Add new one +", numberOfNotes: "")
                 self.dataSource.removeAll()
+                
+                let addNewOneCell = CategoryCollectionViewCellModel(name: "Add new one +", numberOfNotes: " ")
                 self.dataSource += [ addNewOneCell ]
                 self.dataSource += categories.map{ CategoryCollectionViewCellModel(category: $0) }
                 self.collectionView.reloadData()
@@ -46,7 +62,9 @@ class SelectCategoryViewController: UIViewController {
             textField.placeholder = "Category name"
         })
         
-        let action = UIAlertAction(title: "Add", style: .default, handler: { (action) in
+        let action = UIAlertAction(title: "Add",
+                                   style: .default,
+                                   handler: { (action) in
             let tf = alertController.textFields!.first!
             
             if !tf.text!.isEmpty {
@@ -103,14 +121,25 @@ extension SelectCategoryViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize{
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let collectionViewSize = collectionView.frame.size
         
-        let itemWidth = collectionViewSize.width / 2
+        let itemWidth = (collectionViewSize.width / 2) - 10
         let itemHeight = itemWidth
         
         return CGSize(width: itemWidth, height: itemHeight)
     }
     
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
 }

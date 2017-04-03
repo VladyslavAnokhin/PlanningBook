@@ -23,18 +23,23 @@ class SaveRealmNoteService {
         realmNote.startDate = note.dateRange.start
         realmNote.endDate = note.dateRange.end
         
-        let realmCategory = RealmCategory()
-        realmCategory.name = note.category.name
-        realmCategory.numberOfNotes = note.category.numberOfNotes + 1
-        
-        realmNote.category = realmCategory
         
         if realm == nil {
             realm = try! Realm()
         }
         
+        let result = realm
+                    .objects(RealmCategory.self)
+                    .filter("name == %@", note.category.name)
+        
+        if result.count > 1 {
+            fatalError("category should be uniq")
+        }
+        
         do {
             try realm?.write {
+                realmNote.category = result.first!
+                realmNote.category.numberOfNotes += 1
                 realm?.add(realmNote)
                 completion(true, nil)
             }

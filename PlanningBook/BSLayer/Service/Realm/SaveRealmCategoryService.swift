@@ -21,6 +21,7 @@ class SaveRealmCategoryService{
         
         let realmCategory = RealmCategory()
         realmCategory.name = category.name
+        realmCategory.numberOfNotes = category.numberOfNotes
         
         do {
             try realm?.write {
