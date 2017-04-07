@@ -15,8 +15,8 @@ struct TodayModuleAssembly {
     
     func todayNoteViewController() -> TodayNoteViewController {
         let controller =  storyboardAssembly
-            .mainStoryboard()
-            .controller() as TodayNoteViewController
+                        .mainStoryboard()
+                        .controller() as TodayNoteViewController
         controller.title = "TODAY"
         return controller
     }

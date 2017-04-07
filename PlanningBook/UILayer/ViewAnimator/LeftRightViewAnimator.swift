@@ -19,9 +19,9 @@ struct LeftRightViewAnimator: ViewAnimatorProtocol{
             let width = view.bounds.width
             
             if index % 2 == 0 {
-                view.transform = CGAffineTransform(translationX: -width, y: 0)
+                view.transform = CGAffineTransform(translationX: -width * 2, y: 0)
             } else {
-                view.transform = CGAffineTransform(translationX: width, y: 0)
+                view.transform = CGAffineTransform(translationX: width * 2, y: 0)
             }
             
             index += 1

@@ -18,8 +18,8 @@ struct CategoryPickerModuleAssembly {
     
     func categoryPickerViewController() -> SelectCategoryViewController{
         let controller = storyboardAssembly
-            .mainStoryboard()
-             .controller() as SelectCategoryViewController
+                            .mainStoryboard()
+                            .controller() as SelectCategoryViewController
         controller.title = "CATEGORY"
         controller.interactor = interactorAssembly.categoryInteractor()
         controller.controllerFactory = addNoteControllerFactory

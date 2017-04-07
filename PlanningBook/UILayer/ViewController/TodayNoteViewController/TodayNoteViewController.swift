@@ -10,7 +10,24 @@ import UIKit
 
 class TodayNoteViewController: UIViewController {
     
-    var interactor: DayNotesInteractorProtocol! = RealmTodayNotesInteractor()
+    @IBOutlet weak var tableView: UITableView!{
+        didSet{
+            tableView.register(cell: HistoryTableViewCell.self)
+            tableView.dataSource = self
+        }
+    }
     
+    
+    var interactor: DayNotesInteractorProtocol! = RealmTodayNotesInteractor()
+    var tableViewModel: HistoryTableViewModel!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        interactor.fetchNotes(forDay: Date()) { (notes, error) in
+            
+        }
+        
+    }
 }
 
